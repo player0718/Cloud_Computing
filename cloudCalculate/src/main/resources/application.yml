@@ -1,0 +1,23 @@
+
+
+hive:
+  url: jdbc:hive2://101.132.33.87:10000/default #default 是hive默认的数据库名
+  driver-class-name: org.apache.hive.jdbc.HiveDriver
+  type: com.alibaba.druid.pool.DruidDataSource
+  user: root
+  password: root
+  initialSize: 1
+  minIdle: 3
+  maxActive: 20
+  maxWait: 60000
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: 30000
+  validationQuery: select 1
+  testWhileIdle: true
+  testOnBorrow: false
+  testOnReturn: false
+  poolPreparedStatements: true
+  maxPoolPreparedStatementPerConnectionSize: 20
+
+server:
+  port: 7000
