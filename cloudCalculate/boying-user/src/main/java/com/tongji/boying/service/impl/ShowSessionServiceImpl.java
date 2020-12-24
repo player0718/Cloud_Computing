@@ -1,8 +1,6 @@
 package com.tongji.boying.service.impl;
 
-import com.github.pagehelper.PageHelper;
 import com.tongji.boying.common.exception.Asserts;
-import com.tongji.boying.model.Category;
 import com.tongji.boying.model.ShowSession;
 import com.tongji.boying.service.ShowSessionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,8 +49,6 @@ public class ShowSessionServiceImpl implements ShowSessionService
     @Override
     public List<ShowSession> getShowSessionList(int id, Integer pageNum, Integer pageSize)
     {
-        // TODO: 2020/12/24 不过也没有分页的必要
-//        PageHelper.startPage(pageNum, pageSize);//分页相关
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         String sql = "select * from show_session where weight != 0 and show_id = ?";
         try {
