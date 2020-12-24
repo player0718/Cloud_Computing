@@ -2,103 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a508398-9e40-4972-9d2c-9a2fe7421917" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/model/BoyingShow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/model/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/model/ShowClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/model/ShowSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/model/Ticket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/model/UserOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/CommentGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/Generator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/AddressMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/AdminMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/AdminRoleMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/BoyingShowMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/CategoryMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/FrequentMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/MenuMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/ResourceCategoryMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/ResourceMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/ReviewMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/RoleMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/RoleMenuMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/RoleResourceMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/ShowClassMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/ShowSessionMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/TicketMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/mapper/UserOrderMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/Address.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/AddressExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/AdminExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/AdminRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/AdminRoleExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/BoyingShow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/BoyingShowExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/Category.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/CategoryExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/Frequent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/FrequentExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/MenuExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/Resource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/ResourceCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/ResourceCategoryExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/ResourceExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/Review.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/ReviewExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/RoleExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/RoleMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/RoleMenuExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/RoleResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/RoleResourceExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/ShowClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/ShowClassExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/ShowSession.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/ShowSessionExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/Ticket.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/TicketExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/UserExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/UserOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/java/com/tongji/boying/model/UserOrderExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/AddressMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/AdminMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/AdminRoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/BoyingShowMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/CategoryMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/FrequentMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/MenuMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/ResourceCategoryMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/ResourceMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/ReviewMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/RoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/RoleMenuMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/RoleResourceMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/ShowClassMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/ShowSessionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/TicketMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/com/tongji/boying/mapper/UserOrderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/generator.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-mbg/src/main/resources/generatorConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/config/MyBatisConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowCategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowClassServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowClassServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowSessionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowSessionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserCacheServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserCacheServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserTicketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserTicketServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <list id="d603f9c1-293c-4a48-aab4-8b45dca0f3de" name="getCategory" comment="">
+      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowCategoryServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +29,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowCategoryServiceImpl.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="3" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
+        <range start1="6" end1="7" start2="7" end2="7" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
+        <range start1="25" end1="49" start2="25" end2="38" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
+        <range start1="55" end1="63" start2="44" end2="45" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
+        <range start1="67" end1="85" start2="49" end2="58" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
+        <range start1="93" end1="94" start2="66" end2="67" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
+        <range start1="99" end1="112" start2="72" end2="77" changelist="d603f9c1-293c-4a48-aab4-8b45dca0f3de" />
+        <range start1="114" end1="114" start2="79" end2="99" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="1ilaIgLxC2fFLZlLlwWz8KzwFqH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -329,6 +250,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="9a508398-9e40-4972-9d2c-9a2fe7421917" name="Default Changelist" comment="" />
+      <changelist id="d603f9c1-293c-4a48-aab4-8b45dca0f3de" name="getCategory" comment="" />
       <created>1602484553388</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -474,7 +396,7 @@
       <workItem from="1608705713552" duration="3991000" />
       <workItem from="1608710974110" duration="91000" />
       <workItem from="1608787932261" duration="4981000" />
-      <workItem from="1608794196195" duration="3859000" />
+      <workItem from="1608794196195" duration="5459000" />
     </task>
     <servers />
   </component>
@@ -557,38 +479,38 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" width="649" height="489" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1608795465597" />
-    <state width="1493" height="313" key="GridCell.Tab.0.bottom" timestamp="1608798119872">
+    <state width="1493" height="313" key="GridCell.Tab.0.bottom" timestamp="1608799505180">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608798119872" />
-    <state width="1493" height="313" key="GridCell.Tab.0.center" timestamp="1608798119872">
+    <state width="1493" height="313" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
+    <state width="1493" height="313" key="GridCell.Tab.0.center" timestamp="1608799505180">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1608798119872" />
-    <state width="1493" height="313" key="GridCell.Tab.0.left" timestamp="1608798119872">
+    <state width="1493" height="313" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
+    <state width="1493" height="313" key="GridCell.Tab.0.left" timestamp="1608799505180">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1608798119872" />
-    <state width="1493" height="313" key="GridCell.Tab.0.right" timestamp="1608798119872">
+    <state width="1493" height="313" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
+    <state width="1493" height="313" key="GridCell.Tab.0.right" timestamp="1608799505180">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1608798119872" />
-    <state width="1493" height="313" key="GridCell.Tab.1.bottom" timestamp="1608798119872">
+    <state width="1493" height="313" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
+    <state width="1493" height="313" key="GridCell.Tab.1.bottom" timestamp="1608799505180">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608798119872" />
-    <state width="1493" height="313" key="GridCell.Tab.1.center" timestamp="1608798119872">
+    <state width="1493" height="313" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
+    <state width="1493" height="313" key="GridCell.Tab.1.center" timestamp="1608799505180">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1608798119872" />
-    <state width="1493" height="313" key="GridCell.Tab.1.left" timestamp="1608798119872">
+    <state width="1493" height="313" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
+    <state width="1493" height="313" key="GridCell.Tab.1.left" timestamp="1608799505180">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1608798119872" />
-    <state width="1493" height="313" key="GridCell.Tab.1.right" timestamp="1608798119872">
+    <state width="1493" height="313" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
+    <state width="1493" height="313" key="GridCell.Tab.1.right" timestamp="1608799505180">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1608798119872" />
+    <state width="1493" height="313" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
     <state width="1493" height="264" key="GridCell.Tab.2.bottom" timestamp="1608473005815">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -617,6 +539,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="299" y="87" key="Maven.ArtifactSearchDialog/0.0.1536.864@0.0.1536.864" timestamp="1602836446768" />
+    <state x="583" y="366" key="ReplaceDuplicatesPrompt" timestamp="1608799119942">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="583" y="366" key="ReplaceDuplicatesPrompt/0.0.1536.864@0.0.1536.864" timestamp="1608799119942" />
     <state x="491" y="134" key="RollbackChangesDialog" timestamp="1608386584721">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -633,10 +559,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.864@0.0.1536.864" timestamp="1602817081343" />
-    <state x="614" y="346" key="VCS.ChangelistChooser" timestamp="1604215503920">
+    <state x="614" y="346" key="VCS.ChangelistChooser" timestamp="1608799090089">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="614" y="346" key="VCS.ChangelistChooser/0.0.1536.864@0.0.1536.864" timestamp="1604215503920" />
+    <state x="614" y="346" key="VCS.ChangelistChooser/0.0.1536.864@0.0.1536.864" timestamp="1608799090089" />
     <state x="663" y="239" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1608793089005">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -661,10 +587,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="563" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1603869599522" />
-    <state x="499" y="181" key="extract.method.dialog" timestamp="1604362543294">
+    <state x="499" y="181" key="extract.method.dialog" timestamp="1608799112717">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="181" key="extract.method.dialog/0.0.1536.864@0.0.1536.864" timestamp="1604362543294" />
+    <state x="499" y="181" key="extract.method.dialog/0.0.1536.864@0.0.1536.864" timestamp="1608799112717" />
     <state x="468" y="164" width="726" height="536" key="find.popup" timestamp="1603200272889">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
