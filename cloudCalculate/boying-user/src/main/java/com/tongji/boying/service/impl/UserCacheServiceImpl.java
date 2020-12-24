@@ -1,7 +1,6 @@
 package com.tongji.boying.service.impl;
 
 import com.tongji.boying.common.service.RedisService;
-import com.tongji.boying.mapper.UserMapper;
 import com.tongji.boying.model.User;
 import com.tongji.boying.service.UserCacheService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +12,6 @@ public class UserCacheServiceImpl implements UserCacheService
 {
     @Autowired
     private RedisService redisService;
-    @Autowired
-    private UserMapper userMapper;
     @Value("${redis.database}")
     private String REDIS_DATABASE;
     //    除验证码之外的过期时间
@@ -31,15 +28,18 @@ public class UserCacheServiceImpl implements UserCacheService
     @Override
     public void delUser(int userId)
     {
-//        确保全局不会redis缓存key混乱
-        User user = userMapper.selectByPrimaryKey(userId);
-        if (user != null)
-        {
-            String key = REDIS_DATABASE + ":" + REDIS_KEY_USER + ":" + user.getUsername();
-            String key2 = REDIS_DATABASE + ":" + REDIS_KEY_USER + ":" + user.getPhone();
-            redisService.del(key);
-            redisService.del(key2);
-        }
+        // TODO: 2020/12/24
+////        确保全局不会redis缓存key混乱
+//        User user = userMapper.selectByPrimaryKey(userId);
+//
+//
+//        if (user != null)
+//        {
+//            String key = REDIS_DATABASE + ":" + REDIS_KEY_USER + ":" + user.getUsername();
+//            String key2 = REDIS_DATABASE + ":" + REDIS_KEY_USER + ":" + user.getPhone();
+//            redisService.del(key);
+//            redisService.del(key2);
+//        }
     }
 
     @Override

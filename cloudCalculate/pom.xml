@@ -96,12 +96,6 @@
                 <artifactId>boying-common</artifactId>
                 <version>${boying-common.version}</version>
             </dependency>
-            <!--boying中MBG生成模块-->
-            <dependency>
-                <groupId>com.tongji.boying</groupId>
-                <artifactId>boying-mbg</artifactId>
-                <version>${boying-mbg.version}</version>
-            </dependency>
             <!--boying的安全模块-->
             <dependency>
                 <groupId>com.tongji.boying</groupId>

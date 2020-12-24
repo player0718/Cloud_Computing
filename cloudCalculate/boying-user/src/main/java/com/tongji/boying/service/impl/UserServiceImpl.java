@@ -10,9 +10,7 @@ import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.tongji.boying.common.exception.Asserts;
 import com.tongji.boying.config.BoyingUserDetails;
-import com.tongji.boying.mapper.UserMapper;
 import com.tongji.boying.model.User;
-import com.tongji.boying.model.UserExample;
 import com.tongji.boying.security.util.JwtTokenUtil;
 import com.tongji.boying.service.UserCacheService;
 import com.tongji.boying.service.UserService;
@@ -47,8 +45,6 @@ public class UserServiceImpl implements UserService {
     //    便于日志的打印
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
-    @Autowired
-    private UserMapper userMapper;
 
     /**
      * 用于密码加密
@@ -79,9 +75,11 @@ public class UserServiceImpl implements UserService {
     public User getByUsername(String username) {
         User user = userCacheService.getUser(username);
         if (user != null) return user; //缓存里面有数据
-        UserExample example = new UserExample();
-        example.createCriteria().andUsernameEqualTo(username);//根据userExample进行where语句的查询
-        List<User> userList = userMapper.selectByExample(example);
+        // TODO: 2020/12/24
+//        UserExample example = new UserExample();
+//        example.createCriteria().andUsernameEqualTo(username);//根据userExample进行where语句的查询
+//        List<User> userList = userMapper.selectByExample(example);
+        List<User> userList = null;
         if (!CollectionUtils.isEmpty(userList)) {
             user = userList.get(0);
             //账号未启用
@@ -102,12 +100,14 @@ public class UserServiceImpl implements UserService {
         if (!verifyAuthCode(authCode, telephone)) {
             Asserts.fail("验证码错误");
         }
-        //查询是否已有该用户
-        UserExample example = new UserExample();
-        //用户名,手机号唯一
-        example.createCriteria().andUsernameEqualTo(username);
-        example.or(example.createCriteria().andPhoneEqualTo(telephone));
-        List<User> users = userMapper.selectByExample(example);
+//        //查询是否已有该用户
+//        UserExample example = new UserExample();
+//        //用户名,手机号唯一
+//        example.createCriteria().andUsernameEqualTo(username);
+//        example.or(example.createCriteria().andPhoneEqualTo(telephone));
+//        List<User> users = userMapper.selectByExample(example);
+        // TODO: 2020/12/24
+        List<User> users = null;
         if (!CollectionUtils.isEmpty(users)) {
             Asserts.fail("该用户已经存在或手机号已注册");
         }
@@ -119,7 +119,8 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(password));//存储加密后的
         user.setUserstatus(true);
         user.setIcon(icon);
-        userMapper.insert(user);
+        // TODO: 2020/12/24
+//        userMapper.insert(user);
         //注册完删除验证码,每个验证码只能使用一次
         userCacheService.delAuthCode(telephone);
     }
@@ -164,24 +165,24 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updatePassword(String telephone, String password, String authCode) {
-        UserExample example = new UserExample();
-        example.createCriteria().andPhoneEqualTo(telephone);
-        List<User> userList = userMapper.selectByExample(example);
-        if (CollectionUtils.isEmpty(userList)) {
-            Asserts.fail("该账号不存在");
-        }
-        //验证验证码
-        if (!verifyAuthCode(authCode, telephone)) {
-            Asserts.fail("验证码错误");
-        }
-        User user = userList.get(0);
-        user.setPassword(passwordEncoder.encode(password));//密码加密
-        userMapper.updateByPrimaryKeySelective(user);//只更新不为空的字段
-
-        userCacheService.delUser(user.getUserId());//删除无效缓存
-
-        //注册完删除验证码,每个验证码只能使用一次
-        userCacheService.delAuthCode(telephone);
+//        UserExample example = new UserExample();
+//        example.createCriteria().andPhoneEqualTo(telephone);
+//        List<User> userList = userMapper.selectByExample(example);
+//        if (CollectionUtils.isEmpty(userList)) {
+//            Asserts.fail("该账号不存在");
+//        }
+//        //验证验证码
+//        if (!verifyAuthCode(authCode, telephone)) {
+//            Asserts.fail("验证码错误");
+//        }
+//        User user = userList.get(0);
+//        user.setPassword(passwordEncoder.encode(password));//密码加密
+//        userMapper.updateByPrimaryKeySelective(user);//只更新不为空的字段
+//
+//        userCacheService.delUser(user.getUserId());//删除无效缓存
+//
+//        //注册完删除验证码,每个验证码只能使用一次
+//        userCacheService.delAuthCode(telephone);
     }
 
     @Override
@@ -227,85 +228,87 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String telephoneLogin(String telephone, String password) {
-        String token = null;
-        //密码需要客户端加密后传递,但是传递的仍然是明文
-        try {
-            User user = userCacheService.getUserByTelephone(telephone);
-            //缓存里面没有数据
-            if (user == null) {
-                UserExample example = new UserExample();
-                example.createCriteria().andPhoneEqualTo(telephone);//根据userExample进行where语句的查询
-                List<User> userList = userMapper.selectByExample(example);
-                if (!CollectionUtils.isEmpty(userList)) {
-                    user = userList.get(0);
-                    userCacheService.setUser(user);//将查询到的数据放入缓存中
-                }
-                else {
-                    Asserts.fail("手机号不存在");
-                }
-                if (!passwordEncoder.matches(password, user.getPassword())) {
-                    throw new BadCredentialsException("密码不正确");
-                }
-            }
-            UserDetails userDetails = loadUserByUsername(user.getUsername());
-            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-            token = jwtTokenUtil.generateToken(userDetails);
-        }
-        catch (AuthenticationException e) {
-            LOGGER.warn("登录异常:{}", e.getMessage());
-        }
-        return token;
+//        String token = null;
+//        //密码需要客户端加密后传递,但是传递的仍然是明文
+//        try {
+//            User user = userCacheService.getUserByTelephone(telephone);
+//            //缓存里面没有数据
+//            if (user == null) {
+//                UserExample example = new UserExample();
+//                example.createCriteria().andPhoneEqualTo(telephone);//根据userExample进行where语句的查询
+//                List<User> userList = userMapper.selectByExample(example);
+//                if (!CollectionUtils.isEmpty(userList)) {
+//                    user = userList.get(0);
+//                    userCacheService.setUser(user);//将查询到的数据放入缓存中
+//                }
+//                else {
+//                    Asserts.fail("手机号不存在");
+//                }
+//                if (!passwordEncoder.matches(password, user.getPassword())) {
+//                    throw new BadCredentialsException("密码不正确");
+//                }
+//            }
+//            UserDetails userDetails = loadUserByUsername(user.getUsername());
+//            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+//            SecurityContextHolder.getContext().setAuthentication(authentication);
+//            token = jwtTokenUtil.generateToken(userDetails);
+//        }
+//        catch (AuthenticationException e) {
+//            LOGGER.warn("登录异常:{}", e.getMessage());
+//        }
+//        return token;
+        return null;
     }
 
     @Override
     public String authCodeLogin(String telephone, String authCode) {
-        //验证验证码
-        if (!verifyAuthCode(authCode, telephone)) {
-            Asserts.fail("验证码错误");
-        }
-        String token = null;
-        //密码需要客户端加密后传递,但是传递的仍然是明文
-        try {
-            User user = userCacheService.getUserByTelephone(telephone);
-            //缓存里面没有数据
-            if (user == null) {
-                UserExample example = new UserExample();
-                example.createCriteria().andPhoneEqualTo(telephone);//根据userExample进行where语句的查询
-                List<User> userList = userMapper.selectByExample(example);
-                if (!CollectionUtils.isEmpty(userList)) {
-                    user = userList.get(0);
-                    userCacheService.setUser(user);//将查询到的数据放入缓存中
-                }
-                //不需要在校验手机号是否存在
-            }
-            UserDetails userDetails = loadUserByUsername(user.getUsername());
-            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-            token = jwtTokenUtil.generateToken(userDetails);
-        }
-        catch (AuthenticationException e) {
-            LOGGER.warn("登录异常:{}", e.getMessage());
-        }
-        //注册完删除验证码,每个验证码只能使用一次
-        userCacheService.delAuthCode(telephone);
-        return token;
+//        //验证验证码
+//        if (!verifyAuthCode(authCode, telephone)) {
+//            Asserts.fail("验证码错误");
+//        }
+//        String token = null;
+//        //密码需要客户端加密后传递,但是传递的仍然是明文
+//        try {
+//            User user = userCacheService.getUserByTelephone(telephone);
+//            //缓存里面没有数据
+//            if (user == null) {
+//                UserExample example = new UserExample();
+//                example.createCriteria().andPhoneEqualTo(telephone);//根据userExample进行where语句的查询
+//                List<User> userList = userMapper.selectByExample(example);
+//                if (!CollectionUtils.isEmpty(userList)) {
+//                    user = userList.get(0);
+//                    userCacheService.setUser(user);//将查询到的数据放入缓存中
+//                }
+//                //不需要在校验手机号是否存在
+//            }
+//            UserDetails userDetails = loadUserByUsername(user.getUsername());
+//            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+//            SecurityContextHolder.getContext().setAuthentication(authentication);
+//            token = jwtTokenUtil.generateToken(userDetails);
+//        }
+//        catch (AuthenticationException e) {
+//            LOGGER.warn("登录异常:{}", e.getMessage());
+//        }
+//        //注册完删除验证码,每个验证码只能使用一次
+//        userCacheService.delAuthCode(telephone);
+//        return token;
+        return null;
     }
 
     @Override
     public void setDefaultFrequent(Integer frequentId) {
-        User currentUser = getCurrentUser();
-        currentUser.setDefaultFrequent(frequentId);
-        userMapper.updateByPrimaryKey(currentUser);
-        userCacheService.delUser(currentUser.getUserId());//删除无效缓存
+//        User currentUser = getCurrentUser();
+//        currentUser.setDefaultFrequent(frequentId);
+//        userMapper.updateByPrimaryKey(currentUser);
+//        userCacheService.delUser(currentUser.getUserId());//删除无效缓存
     }
 
     @Override
     public void setDefaultAddress(Integer addressId) {
-        User currentUser = getCurrentUser();
-        currentUser.setDefaultAddress(addressId);
-        userMapper.updateByPrimaryKey(currentUser);
-        userCacheService.delUser(currentUser.getUserId());//删除无效缓存
+//        User currentUser = getCurrentUser();
+//        currentUser.setDefaultAddress(addressId);
+//        userMapper.updateByPrimaryKey(currentUser);
+//        userCacheService.delUser(currentUser.getUserId());//删除无效缓存
     }
 
     @Override
@@ -315,17 +318,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateInfo(String realName, String identityNumber, String email, String icon, int age, boolean gender) {
-        User currentUser = getCurrentUser();
-        currentUser.setRealName(realName);
-        currentUser.setIdentityNumber(identityNumber);
-        currentUser.setEmail(email);
-        currentUser.setIcon(icon);
-        currentUser.setGender(gender);
-        if (age > 0) {
-            currentUser.setAge(age);
-        }
-        userMapper.updateByPrimaryKeySelective(currentUser);//只更新不为空的字段
-        userCacheService.delUser(currentUser.getUserId());//删除无效缓存
+//        User currentUser = getCurrentUser();
+//        currentUser.setRealName(realName);
+//        currentUser.setIdentityNumber(identityNumber);
+//        currentUser.setEmail(email);
+//        currentUser.setIcon(icon);
+//        currentUser.setGender(gender);
+//        if (age > 0) {
+//            currentUser.setAge(age);
+//        }
+//        userMapper.updateByPrimaryKeySelective(currentUser);//只更新不为空的字段
+//        userCacheService.delUser(currentUser.getUserId());//删除无效缓存
     }
 
     //对输入的验证码进行校验

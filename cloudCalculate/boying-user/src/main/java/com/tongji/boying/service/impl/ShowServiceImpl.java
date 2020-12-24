@@ -3,9 +3,7 @@ package com.tongji.boying.service.impl;
 import cn.hutool.core.util.StrUtil;
 import com.github.pagehelper.PageHelper;
 import com.tongji.boying.common.exception.Asserts;
-import com.tongji.boying.mapper.BoyingShowMapper;
 import com.tongji.boying.model.BoyingShow;
-import com.tongji.boying.model.BoyingShowExample;
 import com.tongji.boying.model.Category;
 import com.tongji.boying.service.ShowCategoryService;
 import com.tongji.boying.service.ShowService;
@@ -20,13 +18,11 @@ import java.util.stream.Collectors;
 @Service
 public class ShowServiceImpl implements ShowService {
     @Autowired
-    private BoyingShowMapper showMapper;
-    @Autowired
     private ShowCategoryService showCategoryService;
 
     @Override
     public List<BoyingShow> search(String keyword, String city, Integer categoryId, Date date, Integer pageNum, Integer pageSize, Integer sort) {
-        BoyingShowExample example = new BoyingShowExample();
+       /* BoyingShowExample example = new BoyingShowExample();
         BoyingShowExample.Criteria criteria = example.createCriteria();
         //关键词模糊搜索
         if (StrUtil.isNotEmpty(keyword)) {
@@ -81,11 +77,14 @@ public class ShowServiceImpl implements ShowService {
         catch (Exception e){
             Asserts.fail("查询不到信息,参看参数是否有误!");
         }
-        return boyingShows;
+        return boyingShows;*/
+        return null;
     }
 
     @Override
     public BoyingShow detail(int id) {
-        return showMapper.selectByPrimaryKey(id);
+
+//        return showMapper.selectByPrimaryKey(id);
+        return null;
     }
 }

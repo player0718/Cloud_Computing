@@ -15,10 +15,6 @@
     <dependencies>
         <dependency>
             <groupId>com.tongji.boying</groupId>
-            <artifactId>boying-mbg</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.tongji.boying</groupId>
             <artifactId>boying-security</artifactId>
         </dependency>
         <dependency>

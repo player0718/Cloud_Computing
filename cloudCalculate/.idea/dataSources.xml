@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="boying@47.103.203.188" uuid="79b6519a-b634-46d3-8cb2-19ef48556081">
-      <driver-ref>mysql.8</driver-ref>
+    <data-source source="LOCAL" name="@101.132.33.87" uuid="2b12a431-7319-4206-bc35-2d8b9da911a9">
+      <driver-ref>hive</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://47.103.203.188:3306/boying</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="temp@47.103.203.188" uuid="87403cc1-27d9-4bcc-b349-6e45fc59cf22">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://47.103.203.188:3306/temp</jdbc-url>
+      <jdbc-driver>org.apache.hive.jdbc.HiveDriver</jdbc-driver>
+      <jdbc-url>jdbc:hive2://101.132.33.87:10000</jdbc-url>
     </data-source>
   </component>
 </project>
