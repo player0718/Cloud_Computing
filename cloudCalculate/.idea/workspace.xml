@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a508398-9e40-4972-9d2c-9a2fe7421917" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/controller/HiveController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/model/BoyingShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/model/BoyingShow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowCategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowServiceImpl.java" afterDir="false" />
     </list>
-    <list id="d603f9c1-293c-4a48-aab4-8b45dca0f3de" name="getCategory" comment="">
-      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowCategoryServiceImpl.java" afterDir="false" />
-    </list>
+    <list id="d603f9c1-293c-4a48-aab4-8b45dca0f3de" name="getCategory" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,20 +30,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowCategoryServiceImpl.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
-        <range start1="6" end1="7" start2="7" end2="7" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
-        <range start1="25" end1="49" start2="25" end2="38" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
-        <range start1="55" end1="63" start2="44" end2="45" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
-        <range start1="67" end1="85" start2="49" end2="58" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
-        <range start1="93" end1="94" start2="66" end2="67" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
-        <range start1="99" end1="112" start2="72" end2="77" changelist="d603f9c1-293c-4a48-aab4-8b45dca0f3de" />
-        <range start1="114" end1="114" start2="79" end2="99" changelist="9a508398-9e40-4972-9d2c-9a2fe7421917" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1ilaIgLxC2fFLZlLlwWz8KzwFqH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -396,7 +383,7 @@
       <workItem from="1608705713552" duration="3991000" />
       <workItem from="1608710974110" duration="91000" />
       <workItem from="1608787932261" duration="4981000" />
-      <workItem from="1608794196195" duration="5459000" />
+      <workItem from="1608794196195" duration="6913000" />
     </task>
     <servers />
   </component>
@@ -479,54 +466,54 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" width="649" height="489" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1608795465597" />
-    <state width="1493" height="313" key="GridCell.Tab.0.bottom" timestamp="1608799505180">
+    <state width="1292" height="230" key="GridCell.Tab.0.bottom" timestamp="1608801109921">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
-    <state width="1493" height="313" key="GridCell.Tab.0.center" timestamp="1608799505180">
+    <state width="1292" height="230" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608801109921" />
+    <state width="1292" height="230" key="GridCell.Tab.0.center" timestamp="1608801109921">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
-    <state width="1493" height="313" key="GridCell.Tab.0.left" timestamp="1608799505180">
+    <state width="1292" height="230" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1608801109921" />
+    <state width="1292" height="230" key="GridCell.Tab.0.left" timestamp="1608801109921">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
-    <state width="1493" height="313" key="GridCell.Tab.0.right" timestamp="1608799505180">
+    <state width="1292" height="230" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1608801109921" />
+    <state width="1292" height="230" key="GridCell.Tab.0.right" timestamp="1608801109921">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
-    <state width="1493" height="313" key="GridCell.Tab.1.bottom" timestamp="1608799505180">
+    <state width="1292" height="230" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1608801109921" />
+    <state width="1493" height="178" key="GridCell.Tab.1.bottom" timestamp="1608801064354">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
-    <state width="1493" height="313" key="GridCell.Tab.1.center" timestamp="1608799505180">
+    <state width="1493" height="178" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608801064354" />
+    <state width="1493" height="178" key="GridCell.Tab.1.center" timestamp="1608801064354">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
-    <state width="1493" height="313" key="GridCell.Tab.1.left" timestamp="1608799505180">
+    <state width="1493" height="178" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1608801064354" />
+    <state width="1493" height="178" key="GridCell.Tab.1.left" timestamp="1608801064353">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
-    <state width="1493" height="313" key="GridCell.Tab.1.right" timestamp="1608799505180">
+    <state width="1493" height="178" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1608801064353" />
+    <state width="1493" height="178" key="GridCell.Tab.1.right" timestamp="1608801064354">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="313" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1608799505180" />
-    <state width="1493" height="264" key="GridCell.Tab.2.bottom" timestamp="1608473005815">
+    <state width="1493" height="178" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1608801064354" />
+    <state width="1493" height="264" key="GridCell.Tab.2.bottom" timestamp="1608800977023">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608473005815" />
-    <state width="1493" height="264" key="GridCell.Tab.2.center" timestamp="1608473005815">
+    <state width="1493" height="264" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608800977023" />
+    <state width="1493" height="264" key="GridCell.Tab.2.center" timestamp="1608800977023">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1608473005815" />
-    <state width="1493" height="264" key="GridCell.Tab.2.left" timestamp="1608473005815">
+    <state width="1493" height="264" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1608800977023" />
+    <state width="1493" height="264" key="GridCell.Tab.2.left" timestamp="1608800977022">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1608473005815" />
-    <state width="1493" height="264" key="GridCell.Tab.2.right" timestamp="1608473005815">
+    <state width="1493" height="264" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1608800977022" />
+    <state width="1493" height="264" key="GridCell.Tab.2.right" timestamp="1608800977023">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="264" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1608473005815" />
+    <state width="1493" height="264" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1608800977023" />
     <state width="212" height="477" key="HiddenNamespacesPopup" timestamp="1608793066053">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -624,6 +611,11 @@
           <url>file://$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/controller/ShowController.java</url>
           <line>81</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowServiceImpl.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

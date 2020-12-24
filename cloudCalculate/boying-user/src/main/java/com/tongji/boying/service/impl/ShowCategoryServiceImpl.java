@@ -34,9 +34,10 @@ public class ShowCategoryServiceImpl implements ShowCategoryService {
             category.setDescription(resultSet.getString("description"));
             return category;
         }, parentId);
-        if (categories.size() == 0) {
-            Asserts.fail("查询的目录列表为空!");
-        }
+        //不能抛出异常,因为下面categoryMap需要查询所有的
+//        if (categories.size() == 0) {
+//            Asserts.fail("查询的目录列表为空!");
+//        }
         return categories;
     }
 

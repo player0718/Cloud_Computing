@@ -1,10 +1,12 @@
 package com.tongji.boying.model;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
 
+@Data
 public class User implements Serializable {
     private Integer userId;
 
@@ -46,143 +48,4 @@ public class User implements Serializable {
 
     @ApiModelProperty(value = "创建时间")
     private Date createTime;
-
-    private static final long serialVersionUID = 1L;
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getRealName() {
-        return realName;
-    }
-
-    public void setRealName(String realName) {
-        this.realName = realName;
-    }
-
-    public String getIdentityNumber() {
-        return identityNumber;
-    }
-
-    public void setIdentityNumber(String identityNumber) {
-        this.identityNumber = identityNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public Boolean getGender() {
-        return gender;
-    }
-
-    public void setGender(Boolean gender) {
-        this.gender = gender;
-    }
-
-    public Boolean getUserstatus() {
-        return userstatus;
-    }
-
-    public void setUserstatus(Boolean userstatus) {
-        this.userstatus = userstatus;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public Integer getDefaultFrequent() {
-        return defaultFrequent;
-    }
-
-    public void setDefaultFrequent(Integer defaultFrequent) {
-        this.defaultFrequent = defaultFrequent;
-    }
-
-    public Integer getDefaultAddress() {
-        return defaultAddress;
-    }
-
-    public void setDefaultAddress(Integer defaultAddress) {
-        this.defaultAddress = defaultAddress;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", userId=").append(userId);
-        sb.append(", username=").append(username);
-        sb.append(", phone=").append(phone);
-        sb.append(", password=").append(password);
-        sb.append(", realName=").append(realName);
-        sb.append(", identityNumber=").append(identityNumber);
-        sb.append(", email=").append(email);
-        sb.append(", age=").append(age);
-        sb.append(", gender=").append(gender);
-        sb.append(", userstatus=").append(userstatus);
-        sb.append(", icon=").append(icon);
-        sb.append(", defaultFrequent=").append(defaultFrequent);
-        sb.append(", defaultAddress=").append(defaultAddress);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

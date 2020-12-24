@@ -8,6 +8,8 @@ import com.tongji.boying.model.Category;
 import com.tongji.boying.service.ShowCategoryService;
 import com.tongji.boying.service.ShowService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -19,9 +21,14 @@ import java.util.stream.Collectors;
 public class ShowServiceImpl implements ShowService {
     @Autowired
     private ShowCategoryService showCategoryService;
+    @Autowired
+    @Qualifier("jdbcTemplate")
+    private JdbcTemplate jdbcTemplate;
 
     @Override
     public List<BoyingShow> search(String keyword, String city, Integer categoryId, Date date, Integer pageNum, Integer pageSize, Integer sort) {
+        StringBuilder sql = new StringBuilder();
+
        /* BoyingShowExample example = new BoyingShowExample();
         BoyingShowExample.Criteria criteria = example.createCriteria();
         //关键词模糊搜索
@@ -83,8 +90,28 @@ public class ShowServiceImpl implements ShowService {
 
     @Override
     public BoyingShow detail(int id) {
-
-//        return showMapper.selectByPrimaryKey(id);
+        String sql = "select * from boying_show where show_id = ?";
+        try {
+            return jdbcTemplate.queryForObject(sql, (resultSet, i) -> {
+                BoyingShow boyingShow = new BoyingShow();
+                boyingShow.setShowId(resultSet.getInt("show_id"));
+                boyingShow.setName(resultSet.getString("name"));
+                boyingShow.setCategoryId(resultSet.getInt("category_id"));
+                boyingShow.setPoster(resultSet.getString("poster"));
+                boyingShow.setDetails(resultSet.getString("details"));
+                boyingShow.setMinPrice(resultSet.getDouble("min_price"));
+                boyingShow.setMaxPrice(resultSet.getDouble("max_price"));
+                boyingShow.setWeight(resultSet.getInt("weight"));
+                boyingShow.setCity(resultSet.getString("city"));
+                boyingShow.setAddress(resultSet.getString("address"));
+//                boyingShow.setDayStart(resultSet.getDate("day_start"));
+//                boyingShow.setDayEnd(resultSet.getDate("day_end"));
+                return boyingShow;
+            }, id);
+        }
+        catch (Exception e) {
+            Asserts.fail("要查询的演出不存在");
+        }
         return null;
     }
 }

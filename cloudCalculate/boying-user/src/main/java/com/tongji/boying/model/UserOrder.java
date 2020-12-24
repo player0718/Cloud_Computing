@@ -1,10 +1,12 @@
 package com.tongji.boying.model;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
 
+@Data
 public class UserOrder implements Serializable {
     private Integer orderId;
 
@@ -40,125 +42,4 @@ public class UserOrder implements Serializable {
 
     @ApiModelProperty(value = "票的总数")
     private Integer ticketCount;
-
-    private static final long serialVersionUID = 1L;
-
-    public Integer getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public Integer getShowId() {
-        return showId;
-    }
-
-    public void setShowId(Integer showId) {
-        this.showId = showId;
-    }
-
-    public Integer getShowSessionId() {
-        return showSessionId;
-    }
-
-    public void setShowSessionId(Integer showSessionId) {
-        this.showSessionId = showSessionId;
-    }
-
-    public Integer getAddressId() {
-        return addressId;
-    }
-
-    public void setAddressId(Integer addressId) {
-        this.addressId = addressId;
-    }
-
-    public Integer getFrequentId() {
-        return frequentId;
-    }
-
-    public void setFrequentId(Integer frequentId) {
-        this.frequentId = frequentId;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Date getTime() {
-        return time;
-    }
-
-    public void setTime(Date time) {
-        this.time = time;
-    }
-
-    public String getPayment() {
-        return payment;
-    }
-
-    public void setPayment(String payment) {
-        this.payment = payment;
-    }
-
-    public Boolean getUserDelete() {
-        return userDelete;
-    }
-
-    public void setUserDelete(Boolean userDelete) {
-        this.userDelete = userDelete;
-    }
-
-    public Double getMoney() {
-        return money;
-    }
-
-    public void setMoney(Double money) {
-        this.money = money;
-    }
-
-    public Integer getTicketCount() {
-        return ticketCount;
-    }
-
-    public void setTicketCount(Integer ticketCount) {
-        this.ticketCount = ticketCount;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", orderId=").append(orderId);
-        sb.append(", userId=").append(userId);
-        sb.append(", showId=").append(showId);
-        sb.append(", showSessionId=").append(showSessionId);
-        sb.append(", addressId=").append(addressId);
-        sb.append(", frequentId=").append(frequentId);
-        sb.append(", status=").append(status);
-        sb.append(", time=").append(time);
-        sb.append(", payment=").append(payment);
-        sb.append(", userDelete=").append(userDelete);
-        sb.append(", money=").append(money);
-        sb.append(", ticketCount=").append(ticketCount);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }
