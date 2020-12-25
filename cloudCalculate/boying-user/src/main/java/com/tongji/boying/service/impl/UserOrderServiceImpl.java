@@ -1,130 +1,146 @@
 package com.tongji.boying.service.impl;
 
-import com.github.pagehelper.PageHelper;
 import com.tongji.boying.common.exception.Asserts;
 import com.tongji.boying.dto.UserOrderParam;
-import com.tongji.boying.model.*;
-import com.tongji.boying.service.UserOrderService;
-import com.tongji.boying.service.UserService;
-import com.tongji.boying.service.UserTicketService;
+import com.tongji.boying.model.ShowClass;
+import com.tongji.boying.model.ShowSession;
+import com.tongji.boying.model.User;
+import com.tongji.boying.model.UserOrder;
+import com.tongji.boying.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UserOrderServiceImpl implements UserOrderService
-{
+public class UserOrderServiceImpl implements UserOrderService {
     @Autowired
     private UserService userService;
     @Autowired
+    private ShowClassService showClassService;
+    @Autowired
+    private ShowSessionService showSessionService;
+    @Autowired
     private UserTicketService userTicketService;
-
+    @Autowired
+    @Qualifier("jdbcTemplate")
+    private JdbcTemplate jdbcTemplate;
 
     @Override
-    public int add(UserOrderParam param)
-    {
-//        Integer showSessionId = param.getShowSessionId();
-////        Integer frequentId = param.getFrequentId();
-//        List<Integer> showClassIds = param.getShowClassIds();
-//
-//        User user = userService.getCurrentUser();
-//        UserOrderExample orderExample = new UserOrderExample();
-//        //已退票的不算
-//        orderExample.createCriteria().andUserIdEqualTo(user.getUserId()).andShowSessionIdEqualTo(showSessionId).andStatusNotEqualTo(3);
-//        List<UserOrder> orders = orderMapper.selectByExample(orderExample);
-//        if (!orders.isEmpty())
-//        {
-//            //该用户已经下过单了,不能继续了
-//            Asserts.fail("您已经对该场次下单过了,不能重复下单!");
-//        }
-//        if (showClassIds.size() == 0)
-//        {
-//            Asserts.fail("一个订单至少要有1张票!");
-//        }
-//        if (showClassIds.size() > 5)
-//        {
-//            Asserts.fail("一个订单最多只能有5张票!");
-//        }
-//
-////        if (frequentService.getItem(frequentId) == null)
-////        {
-////            Asserts.fail("订单中的常用购票人不合法!");
-////        }
-//
-//        ShowSession showSession = showSessionMapper.selectByPrimaryKey(showSessionId);
-//        if (showSession == null)
-//        {
-//            Asserts.fail("演出场次选择不合法!");
-//        }
-//        ShowClassExample showClassExample = new ShowClassExample();
-//        showClassExample.createCriteria().andShowSessionIdEqualTo(showSession.getShowSessionId());
-//        //数据库中的座次信息
-//        List<ShowClass> dbShowClasses = showClassMapper.selectByExample(showClassExample);
-//        List<Integer> dbShowClassIds = dbShowClasses.stream()
-//                .map(ShowClass::getShowClassId)
-//                .collect(Collectors.toList());
-//        //校验座次是否合法
-//        for (Integer showClassId : showClassIds)
-//        {
-//            if (!dbShowClassIds.contains(showClassId))
-//            {
-//                Asserts.fail("演出座次选择不合法!");
-//            }
-//        }
-//
-//        //生成订单
-//        UserOrder order = new UserOrder();
-//        order.setUserId(user.getUserId());
-//        order.setShowSessionId(showSessionId);
-//        order.setAddressId(null);//0约定为不邮寄
-////        order.setFrequentId(frequentId);
-//        order.setFrequentId(user.getUserId());
-//        order.setStatus(1);//待观看状态
-//        order.setTime(new Date());
-//        order.setPayment("支付宝");
-//        order.setUserDelete(false);
-//        order.setShowId(showSession.getShowId());
-//
-//
-//        //订单总数,订单总金额
-//        double totalMoney = 0;
-//        int count = 0;
-//
-//        for (Integer showClassId : showClassIds)
-//        {
-//            ShowClass showClass = showClassMapper.selectByPrimaryKey(showClassId);
-//
-//
-//            totalMoney += showClass.getPrice();
-//            ++count;
-//        }
-//        order.setTicketCount(count);
-//        order.setMoney(totalMoney);
-//        int insert = orderMapper.insert(order);
-//        /*
-//        如果报错,可能是重新生成了generator
-//        在orderMapper.insert(order)的mapper里面改成如下:
-//        <insert id="insert" parameterType="com.tongji.boying.model.UserOrder" keyProperty="orderId"
-//          keyColumn="order_id" useGeneratedKeys="true">
-//         */
-//        //生成票
-//        for (Integer showClassId : showClassIds)
-//        {
-//            System.out.println(order.getOrderId()+"   "+showClassId);
-//            userTicketService.add(order.getOrderId(), showClassId);
-//        }
-//
-//        return insert;
-        return 0;
+    public int add(UserOrderParam param) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Integer showSessionId = param.getShowSessionId();
+//        Integer frequentId = param.getFrequentId();
+        List<Integer> showClassIds = param.getShowClassIds();
+
+        User user = userService.getCurrentUser();
+        //已退票的不算
+        String sql = "select * from user_order where user_id = ? and show_session_id = ? and status != 3";
+        try {
+            List<UserOrder> orders = jdbcTemplate.query(sql, (resultSet, i) -> {
+                UserOrder orderTemp = new UserOrder();
+                orderTemp.setOrderId(resultSet.getInt("order_id"));
+                orderTemp.setUserId(resultSet.getInt("user_id"));
+                orderTemp.setShowId(resultSet.getInt("show_id"));
+                orderTemp.setShowSessionId(resultSet.getInt("show_session_id"));
+                orderTemp.setStatus(resultSet.getInt("status"));
+                orderTemp.setPayment(resultSet.getString("payment"));
+                orderTemp.setUserDelete(resultSet.getBoolean("user_delete"));
+                orderTemp.setMoney(resultSet.getDouble("money"));
+                orderTemp.setTicketCount(resultSet.getInt("ticket_count"));
+                try {
+                    orderTemp.setTime(format.parse(resultSet.getString("time")));
+                }
+                catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                return orderTemp;
+            }, user.getUserId(), showSessionId);
+            if (orders.size() != 0) {
+                //该用户已经下过单了,不能继续了
+                Asserts.fail("您已经对该场次下单过了,不能重复下单!");
+            }
+        }
+        catch (Exception e) {
+        }
+
+        if (showClassIds.size() == 0) {
+            Asserts.fail("一个订单至少要有1张票!");
+        }
+        if (showClassIds.size() > 5) {
+            Asserts.fail("一个订单最多只能有5张票!");
+        }
+
+        ShowSession showSession = showSessionService.detail(showSessionId);
+        if (showSession == null) {
+            Asserts.fail("演出场次选择不合法!");
+        }
+        //数据库中的座次信息
+        List<ShowClass> dbShowClasses = showClassService.getShowClassList(showSession.getShowSessionId(), 1, 5);
+        List<Integer> dbShowClassIds = dbShowClasses.stream()
+                .map(ShowClass::getShowClassId)
+                .collect(Collectors.toList());
+        //校验座次是否合法
+        for (Integer showClassId : showClassIds) {
+            if (!dbShowClassIds.contains(showClassId)) {
+                Asserts.fail("演出座次选择不合法!");
+            }
+        }
+
+        //生成订单
+        UserOrder order = new UserOrder();
+        order.setUserId(user.getUserId());
+        order.setShowSessionId(showSessionId);
+        order.setAddressId(null);//0约定为不邮寄
+//        order.setFrequentId(frequentId);
+        order.setFrequentId(user.getUserId());
+        order.setStatus(1);//待观看状态
+        order.setTime(new Date());
+        order.setPayment("支付宝");
+        order.setUserDelete(false);
+        order.setShowId(showSession.getShowId());
+
+
+        //订单总数,订单总金额
+        double totalMoney = 0;
+        int count = 0;
+
+        for (Integer showClassId : showClassIds) {
+            ShowClass showClass = showClassService.detail(showClassId);
+
+
+            totalMoney += showClass.getPrice();
+            ++count;
+        }
+        order.setTicketCount(count);
+        order.setMoney(totalMoney);
+
+        sql = "select max(user_id) from user_order";
+        Integer orderCount = jdbcTemplate.queryForObject(sql, Integer.class);
+        if (orderCount == null) {
+            orderCount = 1;
+        }
+        sql = "insert into user_order values(?,?,?,?,?,?,?,?,?,?)";
+        jdbcTemplate.update(sql, orderCount + 1, user.getUserId(), showSession.getShowId(), showSessionId, "1", new Date(), "支付宝", "0", totalMoney, count);
+        sql = "select max(user_id) from user_order";
+        int insert = jdbcTemplate.queryForObject(sql, Integer.class);
+        //生成票
+        for (Integer showClassId : showClassIds) {
+            System.out.println(order.getOrderId() + "   " + showClassId);
+            userTicketService.add(order.getOrderId(), showClassId);
+        }
+
+        return insert;
     }
 
     @Override
-    public int delete(int id)
-    {
+    public int delete(int id) {
 //        User user = userService.getCurrentUser();
 //        UserOrderExample userOrderExample = new UserOrderExample();
 //        userOrderExample.createCriteria().andUserIdEqualTo(user.getUserId()).andOrderIdEqualTo(id).andUserDeleteEqualTo(false);
@@ -165,8 +181,7 @@ public class UserOrderServiceImpl implements UserOrderService
     }
 
     @Override
-    public List<UserOrder> list(Integer status,Integer pageNum, Integer pageSize)
-    {
+    public List<UserOrder> list(Integer status, Integer pageNum, Integer pageSize) {
 //        User user = userService.getCurrentUser();
 //        UserOrderExample userOrderExample = new UserOrderExample();
 //        UserOrderExample.Criteria criteria = userOrderExample.createCriteria();
@@ -176,12 +191,13 @@ public class UserOrderServiceImpl implements UserOrderService
 //        criteria.andUserIdEqualTo(user.getUserId()).andUserDeleteEqualTo(false);
 //        PageHelper.startPage(pageNum, pageSize);//分页相关
 //        return orderMapper.selectByExample(userOrderExample);
+
+
         return null;
     }
 
     @Override
-    public UserOrder getItem(int id)
-    {
+    public UserOrder getItem(int id) {
 //        User user = userService.getCurrentUser();
 //        UserOrderExample userOrderExample = new UserOrderExample();
 //        userOrderExample.createCriteria().andUserIdEqualTo(user.getUserId()).andOrderIdEqualTo(id).andUserDeleteEqualTo(false);
