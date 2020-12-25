@@ -9,8 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="boying-common" />
         <module name="boying-user" />
-        <module name="boying-security" />
         <module name="community" />
+        <module name="boying-security" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">

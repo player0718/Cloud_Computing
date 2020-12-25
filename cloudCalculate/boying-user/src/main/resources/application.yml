@@ -70,7 +70,7 @@ spring:
   application:
     name: boying-user
   redis:
-    host: 47.103.203.188  # Redis服务器地址
+    host: 101.132.33.87  # Redis服务器地址
     database: 0 # Redis数据库索引（默认为0）
     port: 6379 # Redis服务器连接端口
     password: redis # Redis服务器连接密码（默认为空）
@@ -89,6 +89,6 @@ logging:
     com.tongji.boying: debug
 
 logstash:
-  host: 47.103.203.188
+  host: 101.132.33.87
 
 

@@ -152,11 +152,10 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(password));//存储加密后的
         user.setStatus(true);
         user.setIcon(icon);
-        // TODO: 2020/12/24
-        sql = "select row_number() over() from boying_user";
+        sql = "select max(user_id) from boying_user";
         Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
-        sql = "INSERT INTO boying_user (user_id,username,password,phone,icon,status)VALUES (?, ?, ?, ?, ?,true);";
-        jdbcTemplate.update(sql, count + 1, username, password, telephone, icon);
+        sql = "INSERT INTO boying_user (user_id,username,password,phone,icon,status)VALUES (?, ?, ?, ?, ?,?);";
+        jdbcTemplate.update(sql, count + 1, username, password, telephone, icon,"1");
         //注册完删除验证码,每个验证码只能使用一次
         userCacheService.delAuthCode(telephone);
     }
@@ -329,22 +328,6 @@ public class UserServiceImpl implements UserService {
 //        userCacheService.delAuthCode(telephone);
 //        return token;
         return null;
-    }
-
-    @Override
-    public void setDefaultFrequent(Integer frequentId) {
-//        User currentUser = getCurrentUser();
-//        currentUser.setDefaultFrequent(frequentId);
-//        userMapper.updateByPrimaryKey(currentUser);
-//        userCacheService.delUser(currentUser.getUserId());//删除无效缓存
-    }
-
-    @Override
-    public void setDefaultAddress(Integer addressId) {
-//        User currentUser = getCurrentUser();
-//        currentUser.setDefaultAddress(addressId);
-//        userMapper.updateByPrimaryKey(currentUser);
-//        userCacheService.delUser(currentUser.getUserId());//删除无效缓存
     }
 
     @Override

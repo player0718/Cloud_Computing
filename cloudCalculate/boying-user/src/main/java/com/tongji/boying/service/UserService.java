@@ -64,7 +64,4 @@ public interface UserService
 
     String authCodeLogin(String telephone, String authCode);
 
-    void setDefaultFrequent(Integer frequentId);
-
-    void setDefaultAddress(Integer addressId);
 }
