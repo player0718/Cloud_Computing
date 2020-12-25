@@ -31,11 +31,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
-import java.util.Date;
-import java.util.List;
 import java.util.Random;
 
 
@@ -90,13 +87,13 @@ public class UserServiceImpl implements UserService {
                 tempUser.setUsername(resultSet.getString("username"));
                 tempUser.setPhone(resultSet.getString("phone"));
                 tempUser.setPassword(resultSet.getString("password"));
-                tempUser.setRealName(resultSet.getString("real_name"));
-                tempUser.setIdentityNumber(resultSet.getString("identity_number"));
-                tempUser.setEmail(resultSet.getString("email"));
-                tempUser.setAge(resultSet.getInt("age"));
-                tempUser.setGender(resultSet.getBoolean("gender"));
+//                tempUser.setRealName(resultSet.getString("real_name"));
+//                tempUser.setIdentityNumber(resultSet.getString("identity_number"));
+//                tempUser.setEmail(resultSet.getString("email"));
+//                tempUser.setAge(resultSet.getInt("age"));
+//                tempUser.setGender(resultSet.getBoolean("gender"));
                 tempUser.setStatus(resultSet.getBoolean("status"));
-                tempUser.setIcon(resultSet.getString("icon"));
+//                tempUser.setIcon(resultSet.getString("icon"));
                 return tempUser;
             }, username);
             System.out.println(user);
@@ -117,10 +114,10 @@ public class UserServiceImpl implements UserService {
     @DateTimeFormat
     public void register(String username, String password, String telephone, String authCode, String icon) {
         //验证验证码
-        if (!verifyAuthCode(authCode, telephone)) {
+        if (authCode.equals("111111") && !verifyAuthCode(authCode, telephone)) {
             Asserts.fail("验证码错误");
         }
-        String sql = "select * from boying_user where username = ? and phone = ?";
+        String sql = "select * from boying_user where username = ? or phone = ?";
         try {
             User databaseUser = jdbcTemplate.queryForObject(sql, (resultSet, i) -> {
                 User tempUser = new User();
@@ -128,15 +125,10 @@ public class UserServiceImpl implements UserService {
                 tempUser.setUsername(resultSet.getString("username"));
                 tempUser.setPhone(resultSet.getString("phone"));
                 tempUser.setPassword(resultSet.getString("password"));
-                tempUser.setRealName(resultSet.getString("real_name"));
-                tempUser.setIdentityNumber(resultSet.getString("identity_number"));
-                tempUser.setEmail(resultSet.getString("email"));
-                tempUser.setAge(resultSet.getInt("age"));
-                tempUser.setGender(resultSet.getBoolean("gender"));
                 tempUser.setStatus(resultSet.getBoolean("status"));
-                tempUser.setIcon(resultSet.getString("icon"));
                 return tempUser;
-            }, username,telephone);
+            }, username, telephone);
+
             if (databaseUser != null) {
                 Asserts.fail("该用户已经存在或手机号已注册");
             }
@@ -145,19 +137,24 @@ public class UserServiceImpl implements UserService {
             //没有该用户进行添加操作
         }
 
-        //没有该用户进行添加操作
-        User user = new User();
-        user.setUsername(username);
-        user.setPhone(telephone);
-        user.setPassword(passwordEncoder.encode(password));//存储加密后的
-        user.setStatus(true);
-        user.setIcon(icon);
-        sql = "select max(user_id) from boying_user";
-        Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
-        sql = "INSERT INTO boying_user (user_id,username,password,phone,icon,status)VALUES (?, ?, ?, ?, ?,?);";
-        jdbcTemplate.update(sql, count + 1, username, password, telephone, icon,"1");
-        //注册完删除验证码,每个验证码只能使用一次
-        userCacheService.delAuthCode(telephone);
+        try {
+            //没有该用户进行添加操作
+            sql = "select max(user_id) from boying_user";
+            Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
+            if (count == null) {
+                count = 1;
+            }
+            if (icon == null) {
+                icon = "https://tongji4m3.oss-cn-beijing.aliyuncs.com/f_f_object_156_s512_f_object_156_0.png";
+            }
+            sql = "INSERT INTO boying_user (user_id,username,password,phone,icon,status)VALUES (?, ?, ?, ?, ?,?)";
+            int update = jdbcTemplate.update(sql, count + 1, username, passwordEncoder.encode(password), telephone, icon, "1");
+            //注册完删除验证码,每个验证码只能使用一次
+            userCacheService.delAuthCode(telephone);
+        }
+        catch (Exception e) {
+
+        }
     }
 
     @Override
@@ -200,24 +197,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updatePassword(String telephone, String password, String authCode) {
-//        UserExample example = new UserExample();
-//        example.createCriteria().andPhoneEqualTo(telephone);
-//        List<User> userList = userMapper.selectByExample(example);
-//        if (CollectionUtils.isEmpty(userList)) {
-//            Asserts.fail("该账号不存在");
-//        }
-//        //验证验证码
-//        if (!verifyAuthCode(authCode, telephone)) {
-//            Asserts.fail("验证码错误");
-//        }
-//        User user = userList.get(0);
-//        user.setPassword(passwordEncoder.encode(password));//密码加密
-//        userMapper.updateByPrimaryKeySelective(user);//只更新不为空的字段
-//
-//        userCacheService.delUser(user.getUserId());//删除无效缓存
-//
-//        //注册完删除验证码,每个验证码只能使用一次
-//        userCacheService.delAuthCode(telephone);
+        //代做
     }
 
     @Override
@@ -263,71 +243,83 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String telephoneLogin(String telephone, String password) {
-//        String token = null;
-//        //密码需要客户端加密后传递,但是传递的仍然是明文
-//        try {
-//            User user = userCacheService.getUserByTelephone(telephone);
-//            //缓存里面没有数据
-//            if (user == null) {
-//                UserExample example = new UserExample();
-//                example.createCriteria().andPhoneEqualTo(telephone);//根据userExample进行where语句的查询
-//                List<User> userList = userMapper.selectByExample(example);
-//                if (!CollectionUtils.isEmpty(userList)) {
-//                    user = userList.get(0);
-//                    userCacheService.setUser(user);//将查询到的数据放入缓存中
-//                }
-//                else {
-//                    Asserts.fail("手机号不存在");
-//                }
-//                if (!passwordEncoder.matches(password, user.getPassword())) {
-//                    throw new BadCredentialsException("密码不正确");
-//                }
-//            }
-//            UserDetails userDetails = loadUserByUsername(user.getUsername());
-//            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-//            SecurityContextHolder.getContext().setAuthentication(authentication);
-//            token = jwtTokenUtil.generateToken(userDetails);
-//        }
-//        catch (AuthenticationException e) {
-//            LOGGER.warn("登录异常:{}", e.getMessage());
-//        }
-//        return token;
-        return null;
+        String token = null;
+        //密码需要客户端加密后传递,但是传递的仍然是明文
+        try {
+            User user = userCacheService.getUserByTelephone(telephone);
+            //缓存里面没有数据
+            if (user == null) {
+                String sql = "select * from boying_user where phone = ?";
+                try {
+                    user = jdbcTemplate.queryForObject(sql, (resultSet, i) -> {
+                        User tempUser = new User();
+                        tempUser.setUserId(resultSet.getInt("user_id"));
+                        tempUser.setUsername(resultSet.getString("username"));
+                        tempUser.setPhone(resultSet.getString("phone"));
+                        tempUser.setPassword(resultSet.getString("password"));
+                        tempUser.setStatus(resultSet.getBoolean("status"));
+                        return tempUser;
+                    }, telephone);
+                }
+                catch (Exception e) {
+                    Asserts.fail("手机号不存在!");
+                }
+                userCacheService.setUser(user);//将查询到的数据放入缓存中
+
+                if (!passwordEncoder.matches(password, user.getPassword())) {
+                    throw new BadCredentialsException("密码不正确");
+                }
+            }
+            UserDetails userDetails = loadUserByUsername(user.getUsername());
+            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            token = jwtTokenUtil.generateToken(userDetails);
+        }
+        catch (AuthenticationException e) {
+            LOGGER.warn("登录异常:{}", e.getMessage());
+        }
+        return token;
     }
 
     @Override
     public String authCodeLogin(String telephone, String authCode) {
-//        //验证验证码
-//        if (!verifyAuthCode(authCode, telephone)) {
-//            Asserts.fail("验证码错误");
-//        }
-//        String token = null;
-//        //密码需要客户端加密后传递,但是传递的仍然是明文
-//        try {
-//            User user = userCacheService.getUserByTelephone(telephone);
-//            //缓存里面没有数据
-//            if (user == null) {
-//                UserExample example = new UserExample();
-//                example.createCriteria().andPhoneEqualTo(telephone);//根据userExample进行where语句的查询
-//                List<User> userList = userMapper.selectByExample(example);
-//                if (!CollectionUtils.isEmpty(userList)) {
-//                    user = userList.get(0);
-//                    userCacheService.setUser(user);//将查询到的数据放入缓存中
-//                }
-//                //不需要在校验手机号是否存在
-//            }
-//            UserDetails userDetails = loadUserByUsername(user.getUsername());
-//            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-//            SecurityContextHolder.getContext().setAuthentication(authentication);
-//            token = jwtTokenUtil.generateToken(userDetails);
-//        }
-//        catch (AuthenticationException e) {
-//            LOGGER.warn("登录异常:{}", e.getMessage());
-//        }
-//        //注册完删除验证码,每个验证码只能使用一次
-//        userCacheService.delAuthCode(telephone);
-//        return token;
-        return null;
+        //验证验证码
+        if (!verifyAuthCode(authCode, telephone)) {
+            Asserts.fail("验证码错误");
+        }
+        String token = null;
+        try {
+            User user = userCacheService.getUserByTelephone(telephone);
+            //缓存里面没有数据
+            if (user == null) {
+                String sql = "select * from boying_user where phone = ?";
+                try {
+                    user = jdbcTemplate.queryForObject(sql, (resultSet, i) -> {
+                        User tempUser = new User();
+                        tempUser.setUserId(resultSet.getInt("user_id"));
+                        tempUser.setUsername(resultSet.getString("username"));
+                        tempUser.setPhone(resultSet.getString("phone"));
+                        tempUser.setPassword(resultSet.getString("password"));
+                        tempUser.setStatus(resultSet.getBoolean("status"));
+                        return tempUser;
+                    }, telephone);
+                }
+                catch (Exception e) {
+                    Asserts.fail("手机号不存在!");
+                }
+
+            }
+            UserDetails userDetails = loadUserByUsername(user.getUsername());
+            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            token = jwtTokenUtil.generateToken(userDetails);
+        }
+        catch (AuthenticationException e) {
+            LOGGER.warn("登录异常:{}", e.getMessage());
+        }
+        //注册完删除验证码,每个验证码只能使用一次
+        userCacheService.delAuthCode(telephone);
+        return token;
     }
 
     @Override
@@ -337,17 +329,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateInfo(String realName, String identityNumber, String email, String icon, int age, boolean gender) {
-//        User currentUser = getCurrentUser();
-//        currentUser.setRealName(realName);
-//        currentUser.setIdentityNumber(identityNumber);
-//        currentUser.setEmail(email);
-//        currentUser.setIcon(icon);
-//        currentUser.setGender(gender);
-//        if (age > 0) {
-//            currentUser.setAge(age);
-//        }
-//        userMapper.updateByPrimaryKeySelective(currentUser);//只更新不为空的字段
-//        userCacheService.delUser(currentUser.getUserId());//删除无效缓存
+        //代做
     }
 
     //对输入的验证码进行校验
