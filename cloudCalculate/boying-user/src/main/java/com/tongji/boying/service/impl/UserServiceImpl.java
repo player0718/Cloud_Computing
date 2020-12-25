@@ -17,8 +17,10 @@ import com.tongji.boying.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -71,25 +73,43 @@ public class UserServiceImpl implements UserService {
     @Value("${redis.expire.authCode}")
     private Long AUTH_CODE_EXPIRE_SECONDS;
 
+    @Autowired
+    @Qualifier("jdbcTemplate")
+    private JdbcTemplate jdbcTemplate;
+
     @Override
     public User getByUsername(String username) {
         User user = userCacheService.getUser(username);
         if (user != null) return user; //缓存里面有数据
-        // TODO: 2020/12/24
-//        UserExample example = new UserExample();
-//        example.createCriteria().andUsernameEqualTo(username);//根据userExample进行where语句的查询
-//        List<User> userList = userMapper.selectByExample(example);
-        List<User> userList = null;
-        if (!CollectionUtils.isEmpty(userList)) {
-            user = userList.get(0);
-            //账号未启用
-            if (!user.getUserstatus()) {
-                Asserts.fail("账号未启用,请联系管理员!");
-            }
-            userCacheService.setUser(user);//将查询到的数据放入缓存中
-            return user;
+
+        String sql = "select * from boying_user where username = ?";
+        try {
+            user = jdbcTemplate.queryForObject(sql, (resultSet, i) -> {
+                User tempUser = new User();
+                tempUser.setUserId(resultSet.getInt("user_id"));
+                tempUser.setUsername(resultSet.getString("username"));
+                tempUser.setPhone(resultSet.getString("phone"));
+                tempUser.setPassword(resultSet.getString("password"));
+                tempUser.setRealName(resultSet.getString("real_name"));
+                tempUser.setIdentityNumber(resultSet.getString("identity_number"));
+                tempUser.setEmail(resultSet.getString("email"));
+                tempUser.setAge(resultSet.getInt("age"));
+                tempUser.setGender(resultSet.getBoolean("gender"));
+                tempUser.setStatus(resultSet.getBoolean("status"));
+                tempUser.setIcon(resultSet.getString("icon"));
+                return tempUser;
+            }, username);
+            System.out.println(user);
         }
-        return null;
+        catch (Exception e) {
+            Asserts.fail("用户不存在!");
+        }
+        //账号未启用
+        if (!user.getStatus()) {
+            Asserts.fail("账号未启用,请联系管理员!");
+        }
+        userCacheService.setUser(user);//将查询到的数据放入缓存中
+        return user;
     }
 
 
@@ -100,27 +120,43 @@ public class UserServiceImpl implements UserService {
         if (!verifyAuthCode(authCode, telephone)) {
             Asserts.fail("验证码错误");
         }
-//        //查询是否已有该用户
-//        UserExample example = new UserExample();
-//        //用户名,手机号唯一
-//        example.createCriteria().andUsernameEqualTo(username);
-//        example.or(example.createCriteria().andPhoneEqualTo(telephone));
-//        List<User> users = userMapper.selectByExample(example);
-        // TODO: 2020/12/24
-        List<User> users = null;
-        if (!CollectionUtils.isEmpty(users)) {
-            Asserts.fail("该用户已经存在或手机号已注册");
+        String sql = "select * from boying_user where username = ? and phone = ?";
+        try {
+            User databaseUser = jdbcTemplate.queryForObject(sql, (resultSet, i) -> {
+                User tempUser = new User();
+                tempUser.setUserId(resultSet.getInt("user_id"));
+                tempUser.setUsername(resultSet.getString("username"));
+                tempUser.setPhone(resultSet.getString("phone"));
+                tempUser.setPassword(resultSet.getString("password"));
+                tempUser.setRealName(resultSet.getString("real_name"));
+                tempUser.setIdentityNumber(resultSet.getString("identity_number"));
+                tempUser.setEmail(resultSet.getString("email"));
+                tempUser.setAge(resultSet.getInt("age"));
+                tempUser.setGender(resultSet.getBoolean("gender"));
+                tempUser.setStatus(resultSet.getBoolean("status"));
+                tempUser.setIcon(resultSet.getString("icon"));
+                return tempUser;
+            }, username,telephone);
+            if (databaseUser != null) {
+                Asserts.fail("该用户已经存在或手机号已注册");
+            }
         }
+        catch (Exception e) {
+            //没有该用户进行添加操作
+        }
+
         //没有该用户进行添加操作
         User user = new User();
         user.setUsername(username);
         user.setPhone(telephone);
-        user.setCreateTime(new Date());
         user.setPassword(passwordEncoder.encode(password));//存储加密后的
-        user.setUserstatus(true);
+        user.setStatus(true);
         user.setIcon(icon);
         // TODO: 2020/12/24
-//        userMapper.insert(user);
+        sql = "select row_number() over() from boying_user";
+        Integer count = jdbcTemplate.queryForObject(sql, Integer.class);
+        sql = "INSERT INTO boying_user (user_id,username,password,phone,icon,status)VALUES (?, ?, ?, ?, ?,true);";
+        jdbcTemplate.update(sql, count + 1, username, password, telephone, icon);
         //注册完删除验证码,每个验证码只能使用一次
         userCacheService.delAuthCode(telephone);
     }

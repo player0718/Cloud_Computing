@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d955e566-3341-457b-a073-dd538c8f1fda" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cloudCalculate/target/classes/META-INF/cloudCalculate.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudCalculate/target/test-classes/META-INF/cloudCalculate.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudCalculate/boying-user/src/main/java/com/tongji/boying/config/BoyingUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudCalculate/boying-user/src/main/java/com/tongji/boying/config/BoyingUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudCalculate/boying-user/src/main/java/com/tongji/boying/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudCalculate/boying-user/src/main/java/com/tongji/boying/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudCalculate/boying-user/src/main/java/com/tongji/boying/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudCalculate/boying-user/src/main/java/com/tongji/boying/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +27,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -38,10 +43,26 @@
       <option name="presentableId" value="Default" />
       <updated>1608702748925</updated>
       <workItem from="1608702750751" duration="54000" />
+      <workItem from="1608860232042" duration="156000" />
+      <workItem from="1608860394244" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="91" key="#Deployment" timestamp="1608860281013">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="91" key="#Deployment/0.0.1536.864@0.0.1536.864" timestamp="1608860281013" />
+    <state x="345" y="78" key="#SSH_Configurations" timestamp="1608860279847">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="345" y="78" key="#SSH_Configurations/0.0.1536.864@0.0.1536.864" timestamp="1608860279847" />
+    <state x="249" y="7" key="SettingsEditor" timestamp="1608860386054">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="249" y="7" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1608860386054" />
   </component>
 </project>

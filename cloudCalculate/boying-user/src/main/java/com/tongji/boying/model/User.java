@@ -35,17 +35,8 @@ public class User implements Serializable {
     private Boolean gender;
 
     @ApiModelProperty(value = "帐号启用状态：0->禁用；1->启用")
-    private Boolean userstatus;
+    private Boolean status;
 
     @ApiModelProperty(value = "个人头像")
     private String icon;
-
-    @ApiModelProperty(value = "默认观影者")
-    private Integer defaultFrequent;
-
-    @ApiModelProperty(value = "默认地址")
-    private Integer defaultAddress;
-
-    @ApiModelProperty(value = "创建时间")
-    private Date createTime;
 }
