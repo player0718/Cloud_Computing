@@ -9,4 +9,6 @@ public interface ShowClassService
     ShowClass detail(Integer classId);
 
     List<ShowClass> getShowClassList(int sessionId, Integer pageNum, Integer pageSize);
+
+    Integer ticketCount(Integer classId);
 }

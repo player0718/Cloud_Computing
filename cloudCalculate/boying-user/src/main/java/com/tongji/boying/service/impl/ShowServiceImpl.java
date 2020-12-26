@@ -65,15 +65,13 @@ public class ShowServiceImpl implements ShowService {
         }
        /*
         //按时间搜索
-        todo
         if (date != null) {
 //            查询的时间在开始时间,结束时间之间
             criteria.andDayStartLessThanOrEqualTo(date).andDayEndGreaterThanOrEqualTo(date);
         }*/
 
-        // TODO: 2020/12/24 分页
-        int perId = (pageNum - 1) * pageSize + 1;
-        sql.append("and show_id >=" + perId + " limit "+ pageSize);
+//        int perId = (pageNum - 1) * pageSize + 1;
+//        sql.append("and show_id >=" + perId + " limit "+ pageSize);
 
         //0->按相关度；1->按推荐；2->按时间；3->最低价格从低到高；4->最低价格从高到低
         if (sort == 1) {

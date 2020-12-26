@@ -93,7 +93,7 @@ public class UserServiceImpl implements UserService {
 //                tempUser.setAge(resultSet.getInt("age"));
 //                tempUser.setGender(resultSet.getBoolean("gender"));
                 tempUser.setStatus(resultSet.getBoolean("status"));
-//                tempUser.setIcon(resultSet.getString("icon"));
+                tempUser.setIcon(resultSet.getString("icon"));
                 return tempUser;
             }, username);
             System.out.println(user);
@@ -114,27 +114,14 @@ public class UserServiceImpl implements UserService {
     @DateTimeFormat
     public void register(String username, String password, String telephone, String authCode, String icon) {
         //验证验证码
-        if (authCode.equals("111111") && !verifyAuthCode(authCode, telephone)) {
+        if (!verifyAuthCode(authCode, telephone)) {
             Asserts.fail("验证码错误");
         }
-        String sql = "select * from boying_user where username = ? or phone = ?";
-        try {
-            User databaseUser = jdbcTemplate.queryForObject(sql, (resultSet, i) -> {
-                User tempUser = new User();
-                tempUser.setUserId(resultSet.getInt("user_id"));
-                tempUser.setUsername(resultSet.getString("username"));
-                tempUser.setPhone(resultSet.getString("phone"));
-                tempUser.setPassword(resultSet.getString("password"));
-                tempUser.setStatus(resultSet.getBoolean("status"));
-                return tempUser;
-            }, username, telephone);
+        String sql = "select count(*) from boying_user where username = ? or phone = ?";
+        Integer userCount = jdbcTemplate.queryForObject(sql, Integer.class, username, telephone);
 
-            if (databaseUser != null) {
-                Asserts.fail("该用户已经存在或手机号已注册");
-            }
-        }
-        catch (Exception e) {
-            //没有该用户进行添加操作
+        if (userCount != null && userCount != 0) {
+            Asserts.fail("用户名或手机号已存在！");
         }
 
         try {

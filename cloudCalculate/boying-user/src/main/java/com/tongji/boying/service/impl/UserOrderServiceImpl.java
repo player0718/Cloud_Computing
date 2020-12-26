@@ -34,40 +34,15 @@ public class UserOrderServiceImpl implements UserOrderService {
 
     @Override
     public int add(UserOrderParam param) {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Integer showSessionId = param.getShowSessionId();
-//        Integer frequentId = param.getFrequentId();
         List<Integer> showClassIds = param.getShowClassIds();
-
         User user = userService.getCurrentUser();
-        //已退票的不算
-        String sql = "select * from user_order where user_id = ? and show_session_id = ? and status != 3";
-        try {
-            List<UserOrder> orders = jdbcTemplate.query(sql, (resultSet, i) -> {
-                UserOrder orderTemp = new UserOrder();
-                orderTemp.setOrderId(resultSet.getInt("order_id"));
-                orderTemp.setUserId(resultSet.getInt("user_id"));
-                orderTemp.setShowId(resultSet.getInt("show_id"));
-                orderTemp.setShowSessionId(resultSet.getInt("show_session_id"));
-                orderTemp.setStatus(resultSet.getInt("status"));
-                orderTemp.setPayment(resultSet.getString("payment"));
-                orderTemp.setUserDelete(resultSet.getBoolean("user_delete"));
-                orderTemp.setMoney(resultSet.getDouble("money"));
-                orderTemp.setTicketCount(resultSet.getInt("ticket_count"));
-                try {
-                    orderTemp.setTime(format.parse(resultSet.getString("time")));
-                }
-                catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                return orderTemp;
-            }, user.getUserId(), showSessionId);
-            if (orders.size() != 0) {
-                //该用户已经下过单了,不能继续了
-                Asserts.fail("您已经对该场次下单过了,不能重复下单!");
-            }
-        }
-        catch (Exception e) {
+
+        String sql = "select count(*) from user_order where user_id = ? and show_session_id = ? and status != 3";
+        Integer dbOrderCount = jdbcTemplate.queryForObject(sql, Integer.class, user.getUserId(), showSessionId);
+
+        if (dbOrderCount != null && dbOrderCount != 0) {
+            Asserts.fail("不能反复对同一个场次下单！");
         }
 
         if (showClassIds.size() == 0) {
@@ -98,7 +73,6 @@ public class UserOrderServiceImpl implements UserOrderService {
         order.setUserId(user.getUserId());
         order.setShowSessionId(showSessionId);
         order.setAddressId(null);//0约定为不邮寄
-//        order.setFrequentId(frequentId);
         order.setFrequentId(user.getUserId());
         order.setStatus(1);//待观看状态
         order.setTime(new Date());
@@ -121,19 +95,18 @@ public class UserOrderServiceImpl implements UserOrderService {
         order.setTicketCount(count);
         order.setMoney(totalMoney);
 
-        sql = "select max(user_id) from user_order";
+        sql = "select max(order_id) from user_order";
         Integer orderCount = jdbcTemplate.queryForObject(sql, Integer.class);
         if (orderCount == null) {
             orderCount = 1;
         }
         sql = "insert into user_order values(?,?,?,?,?,?,?,?,?,?)";
         jdbcTemplate.update(sql, orderCount + 1, user.getUserId(), showSession.getShowId(), showSessionId, "1", new Date(), "支付宝", "0", totalMoney, count);
-        sql = "select max(user_id) from user_order";
+        sql = "select max(order_id) from user_order";
         int insert = jdbcTemplate.queryForObject(sql, Integer.class);
         //生成票
         for (Integer showClassId : showClassIds) {
-            System.out.println(order.getOrderId() + "   " + showClassId);
-            userTicketService.add(order.getOrderId(), showClassId);
+            userTicketService.add(insert, showClassId);
         }
 
         return insert;
@@ -141,72 +114,86 @@ public class UserOrderServiceImpl implements UserOrderService {
 
     @Override
     public int delete(int id) {
-//        User user = userService.getCurrentUser();
-//        UserOrderExample userOrderExample = new UserOrderExample();
-//        userOrderExample.createCriteria().andUserIdEqualTo(user.getUserId()).andOrderIdEqualTo(id).andUserDeleteEqualTo(false);
-//        List<UserOrder> userOrders = orderMapper.selectByExample(userOrderExample);
-//        if (userOrders.isEmpty())
-//        {
-//            Asserts.fail("无此订单");
-//        }
-//        UserOrder order = new UserOrder();
-//        order.setUserDelete(true);
-//        order.setOrderId(userOrders.get(0).getOrderId());
-//        return orderMapper.updateByPrimaryKeySelective(order);
-        return 0;
+        // TODO: 2020/12/26 修改删除不被hive允许
+        User user = userService.getCurrentUser();
+        String sql = "update user_order set user_delete = ? where user_id = ? and order_id = ?";
+        return jdbcTemplate.update(sql, "1", user.getUserId(), id);
     }
 
     @Override
     public int cancel(int id) {
-//        User user = userService.getCurrentUser();
-//        UserOrderExample userOrderExample = new UserOrderExample();
-//        userOrderExample.createCriteria().andUserIdEqualTo(user.getUserId()).andOrderIdEqualTo(id).andUserDeleteEqualTo(false);
-//        List<UserOrder> userOrders = orderMapper.selectByExample(userOrderExample);
-//        if (userOrders.isEmpty())
-//        {
-//            Asserts.fail("无此订单");
-//        }
-//        if (userOrders.get(0).getStatus() == 2) {
-//            Asserts.fail("不能取消已完成订单!");
-//        }
-//        UserOrder order = new UserOrder();
-//        order.setOrderId(userOrders.get(0).getOrderId());
-//        order.setStatus(3);
-//        TicketExample ticketExample = new TicketExample();
-//        ticketExample.createCriteria().andOrderIdEqualTo(order.getOrderId());
-//        ticketMapper.deleteByExample(ticketExample);
-////        return orderMapper.deleteByPrimaryKey(order.getOrderId());
-//        return orderMapper.updateByPrimaryKeySelective(order);
-        return 0;
+        User user = userService.getCurrentUser();
+        String sql = "update user_order set status = ? where user_id = ? and order_id = ?";
+        return jdbcTemplate.update(sql, "3", user.getUserId(), id);
     }
 
     @Override
     public List<UserOrder> list(Integer status, Integer pageNum, Integer pageSize) {
-//        User user = userService.getCurrentUser();
-//        UserOrderExample userOrderExample = new UserOrderExample();
-//        UserOrderExample.Criteria criteria = userOrderExample.createCriteria();
-//        if (status != null && status != -1) {
-//            criteria.andStatusEqualTo(status);
-//        }
-//        criteria.andUserIdEqualTo(user.getUserId()).andUserDeleteEqualTo(false);
-//        PageHelper.startPage(pageNum, pageSize);//分页相关
-//        return orderMapper.selectByExample(userOrderExample);
-
-
+        if (status == null || status == -1) {
+            //默认查询未观看订单
+            status = 1;
+        }
+        User user = userService.getCurrentUser();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //已退票的不算
+        String sql = "select * from user_order where user_id = ?  and status = ? and user_delete = ?";
+        try {
+            return jdbcTemplate.query(sql, (resultSet, i) -> {
+                UserOrder orderTemp = new UserOrder();
+                orderTemp.setOrderId(resultSet.getInt("order_id"));
+                orderTemp.setUserId(resultSet.getInt("user_id"));
+                orderTemp.setShowId(resultSet.getInt("show_id"));
+                orderTemp.setShowSessionId(resultSet.getInt("show_session_id"));
+                orderTemp.setStatus(resultSet.getInt("status"));
+                orderTemp.setPayment(resultSet.getString("payment"));
+                orderTemp.setUserDelete(resultSet.getBoolean("user_delete"));
+                orderTemp.setMoney(resultSet.getDouble("money"));
+                orderTemp.setTicketCount(resultSet.getInt("ticket_count"));
+                try {
+                    orderTemp.setTime(format.parse(resultSet.getString("time")));
+                }
+                catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                return orderTemp;
+            }, user.getUserId(), status, 0);
+        }
+        catch (Exception e) {
+            Asserts.fail("找不到该订单!");
+        }
         return null;
     }
 
     @Override
     public UserOrder getItem(int id) {
-//        User user = userService.getCurrentUser();
-//        UserOrderExample userOrderExample = new UserOrderExample();
-//        userOrderExample.createCriteria().andUserIdEqualTo(user.getUserId()).andOrderIdEqualTo(id).andUserDeleteEqualTo(false);
-//        List<UserOrder> userOrders = orderMapper.selectByExample(userOrderExample);
-//        if (!CollectionUtils.isEmpty(userOrders))
-//        {
-//            return userOrders.get(0);
-//        }
-//        return null;
+        User user = userService.getCurrentUser();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //已退票的不算
+        String sql = "select * from user_order where user_id = ? and order_id = ? and status != 3";
+        try {
+            return jdbcTemplate.queryForObject(sql, (resultSet, i) -> {
+                UserOrder orderTemp = new UserOrder();
+                orderTemp.setOrderId(resultSet.getInt("order_id"));
+                orderTemp.setUserId(resultSet.getInt("user_id"));
+                orderTemp.setShowId(resultSet.getInt("show_id"));
+                orderTemp.setShowSessionId(resultSet.getInt("show_session_id"));
+                orderTemp.setStatus(resultSet.getInt("status"));
+                orderTemp.setPayment(resultSet.getString("payment"));
+                orderTemp.setUserDelete(resultSet.getBoolean("user_delete"));
+                orderTemp.setMoney(resultSet.getDouble("money"));
+                orderTemp.setTicketCount(resultSet.getInt("ticket_count"));
+                try {
+                    orderTemp.setTime(format.parse(resultSet.getString("time")));
+                }
+                catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                return orderTemp;
+            }, user.getUserId(), id);
+        }
+        catch (Exception e) {
+            Asserts.fail("找不到该订单!");
+        }
         return null;
     }
 }

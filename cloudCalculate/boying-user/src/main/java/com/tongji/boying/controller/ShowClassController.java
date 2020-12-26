@@ -36,6 +36,14 @@ public class ShowClassController {
         return CommonResult.success(showClass);
     }
 
+    @ApiOperation("获取演出座次剩余票")
+    @RequestMapping(value = "/ticketCount/{classId}", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult<Integer> ticketCount(@PathVariable Integer classId) {
+        Integer ticketCount = classService.ticketCount(classId);
+        return CommonResult.success(ticketCount);
+    }
+
     @ApiOperation("获取某演唱会场次的所有座次")
     @RequestMapping(value = "/classList", method = RequestMethod.POST)
     @ResponseBody
