@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9a508398-9e40-4972-9d2c-9a2fe7421917" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserTicketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserTicketServiceImpl.java" afterDir="false" />
+    </list>
+    <list id="d603f9c1-293c-4a48-aab4-8b45dca0f3de" name="getCategory" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="EndpointsView">
+    <option name="showFromLibraries" value="true" />
+    <option name="showFromOpenedProjects" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserCacheServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowSessionServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserOrderServiceImpl.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserServiceImpl.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1ilaIgLxC2fFLZlLlwWz8KzwFqH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql&#10;hive&#10;oracle" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowBean Validation.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="database.data.extractors.current.export.id" value="SQL-Insert-Statements.sql.groovy" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../boying" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\12549\Desktop\boying\boying-mbg\src\main\resources\com\tongji\boying" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.tongji.boying" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\12549\Desktop\Github\Cloud_Computing\cloudCalculate\boying-user\src\main\java\com\tongji\boying\model" />
+      <recent name="C:\Users\12549\Desktop\Github\Cloud_Computing\cloudCalculate\boying-user\src\main\java\com\tongji\boying" />
+      <recent name="C:\Users\12549\Desktop\boying\boying-admin\src\main\resources\dao" />
+      <recent name="C:\Users\12549\Desktop\boying\boying-admin\src\main\java\com\tongji\boying\service\impl" />
+      <recent name="C:\Users\12549\Desktop\boying\boying-admin\src\main\java\com\tongji\boying\config\controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tongji.boying.controller" />
+      <recent name="com.tongji.boying.dto" />
+      <recent name="com.tongji.boying.dao" />
+      <recent name="com.tongji.dao" />
+      <recent name="com.tongji.boying.config.dto" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.tongji.boying.service" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="show engines;" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BoyingUserApplication">
+    <configuration name="BoyingUserApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tongji.boying.BoyingUserApplication" />
+      <module name="boying-user" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tongji.boying.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tongji.boying.common.CommonTest" />
+      <module name="boying-common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tongji.boying.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Generator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tongji.boying.Generator" />
+      <module name="boying-mbg" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tongji.boying.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tongji.mbg.Generator" />
+      <module name="boying" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tongji.mbg.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tongji.boying.Generator" />
+      <module name="boying-mbg" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tongji.boying.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoyingAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="boying-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tongji.boying.BoyingAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoyingCommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="boying-common" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tongji.boying.common.BoyingCommonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoyingMbgApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="boying-mbg" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tongji.boying.mbg.BoyingMbgApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoyingSearchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="boying-search" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tongji.boying.search.BoyingSearchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoyingSecurityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="boying-security" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tongji.boying.boyingsecurity.BoyingSecurityApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoyingUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="boying-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tongji.boying.BoyingUserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySpringBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="boying" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tongji.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tongji.MySpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Generator (1)" />
+        <item itemvalue="Application.BoyingUserApplication" />
+        <item itemvalue="Application.Generator" />
+        <item itemvalue="Application.CommonTest" />
+        <item itemvalue="Spring Boot.MySpringBootApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+    <option name="myConnectionType" value="NONE" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9a508398-9e40-4972-9d2c-9a2fe7421917" name="Default Changelist" comment="" />
+      <changelist id="d603f9c1-293c-4a48-aab4-8b45dca0f3de" name="getCategory" comment="" />
+      <created>1602484553388</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602484553388</updated>
+      <workItem from="1602484555416" duration="1801000" />
+      <workItem from="1602488277819" duration="1177000" />
+      <workItem from="1602489574156" duration="49000" />
+      <workItem from="1602493534977" duration="2974000" />
+      <workItem from="1602501602851" duration="4048000" />
+      <workItem from="1602511710520" duration="1633000" />
+      <workItem from="1602554392354" duration="5037000" />
+      <workItem from="1602571983448" duration="10751000" />
+      <workItem from="1602636819613" duration="81000" />
+      <workItem from="1602640995691" duration="855000" />
+      <workItem from="1602754889471" duration="2130000" />
+      <workItem from="1602759981360" duration="4376000" />
+      <workItem from="1602766843927" duration="3189000" />
+      <workItem from="1602773216582" duration="1745000" />
+      <workItem from="1602775182516" duration="145000" />
+      <workItem from="1602775336210" duration="220000" />
+      <workItem from="1602775564149" duration="276000" />
+      <workItem from="1602809784940" duration="8174000" />
+      <workItem from="1602818044074" duration="998000" />
+      <workItem from="1602836405930" duration="9187000" />
+      <workItem from="1602857892509" duration="185000" />
+      <workItem from="1602897305356" duration="526000" />
+      <workItem from="1602898184661" duration="7707000" />
+      <workItem from="1602918325347" duration="4350000" />
+      <workItem from="1602932822344" duration="4123000" />
+      <workItem from="1602988969248" duration="7138000" />
+      <workItem from="1603018243917" duration="662000" />
+      <workItem from="1603022434303" duration="1929000" />
+      <workItem from="1603089994581" duration="1000" />
+      <workItem from="1603095628921" duration="7065000" />
+      <workItem from="1603105439391" duration="5394000" />
+      <workItem from="1603111831760" duration="3645000" />
+      <workItem from="1603153791276" duration="3491000" />
+      <workItem from="1603158314515" duration="944000" />
+      <workItem from="1603176838468" duration="10012000" />
+      <workItem from="1603269222592" duration="6736000" />
+      <workItem from="1603281390493" duration="1942000" />
+      <workItem from="1603333036806" duration="6859000" />
+      <workItem from="1603366235527" duration="1803000" />
+      <workItem from="1603411063628" duration="1922000" />
+      <workItem from="1603421817044" duration="548000" />
+      <workItem from="1603439236211" duration="8677000" />
+      <workItem from="1603497700111" duration="7380000" />
+      <workItem from="1603522445646" duration="3004000" />
+      <workItem from="1603532186629" duration="6029000" />
+      <workItem from="1603582848608" duration="635000" />
+      <workItem from="1603588696145" duration="2905000" />
+      <workItem from="1603609021663" duration="347000" />
+      <workItem from="1603628186479" duration="1715000" />
+      <workItem from="1603631082295" duration="3758000" />
+      <workItem from="1603682372025" duration="18000" />
+      <workItem from="1603710503620" duration="4897000" />
+      <workItem from="1603755937689" duration="6106000" />
+      <workItem from="1603763771805" duration="3280000" />
+      <workItem from="1603844364874" duration="4160000" />
+      <workItem from="1603867189125" duration="4594000" />
+      <workItem from="1603951025390" duration="3782000" />
+      <workItem from="1603966984347" duration="951000" />
+      <workItem from="1603969626075" duration="4609000" />
+      <workItem from="1604044980533" duration="8108000" />
+      <workItem from="1604065070237" duration="2571000" />
+      <workItem from="1604101621817" duration="5873000" />
+      <workItem from="1604111875828" duration="592000" />
+      <workItem from="1604112546480" duration="4012000" />
+      <workItem from="1604128656557" duration="6957000" />
+      <workItem from="1604192247292" duration="23573000" />
+      <workItem from="1604284866629" duration="1208000" />
+      <workItem from="1604294970795" duration="8815000" />
+      <workItem from="1604305925222" duration="5863000" />
+      <workItem from="1604314972575" duration="5467000" />
+      <workItem from="1604361778111" duration="5782000" />
+      <workItem from="1604368993268" duration="5246000" />
+      <workItem from="1604383771246" duration="9852000" />
+      <workItem from="1604406992518" duration="599000" />
+      <workItem from="1604491415916" duration="2704000" />
+      <workItem from="1604619654237" duration="574000" />
+      <workItem from="1604625541749" duration="946000" />
+      <workItem from="1604890028813" duration="3677000" />
+      <workItem from="1605160073789" duration="2236000" />
+      <workItem from="1605163662436" duration="630000" />
+      <workItem from="1605170214889" duration="3270000" />
+      <workItem from="1605182946709" duration="842000" />
+      <workItem from="1605337858498" duration="182000" />
+      <workItem from="1605425904707" duration="60000" />
+      <workItem from="1605426044922" duration="19000" />
+      <workItem from="1605428271001" duration="173000" />
+      <workItem from="1605839189372" duration="3995000" />
+      <workItem from="1606131125722" duration="2963000" />
+      <workItem from="1606207328365" duration="213000" />
+      <workItem from="1606209646398" duration="1208000" />
+      <workItem from="1606355354333" duration="3571000" />
+      <workItem from="1606535260687" duration="806000" />
+      <workItem from="1606618121814" duration="2620000" />
+      <workItem from="1606721367482" duration="75000" />
+      <workItem from="1606961105805" duration="519000" />
+      <workItem from="1606975126338" duration="182000" />
+      <workItem from="1607302806130" duration="208000" />
+      <workItem from="1607306689276" duration="917000" />
+      <workItem from="1607312487613" duration="450000" />
+      <workItem from="1607319656537" duration="2206000" />
+      <workItem from="1607342250018" duration="2013000" />
+      <workItem from="1607347410455" duration="71000" />
+      <workItem from="1607347513062" duration="272000" />
+      <workItem from="1607424131065" duration="273000" />
+      <workItem from="1607492372321" duration="328000" />
+      <workItem from="1607649754696" duration="680000" />
+      <workItem from="1607776017870" duration="743000" />
+      <workItem from="1608103077626" duration="1867000" />
+      <workItem from="1608105900890" duration="97000" />
+      <workItem from="1608117241953" duration="565000" />
+      <workItem from="1608117997155" duration="235000" />
+      <workItem from="1608202804519" duration="4870000" />
+      <workItem from="1608253259631" duration="2995000" />
+      <workItem from="1608269684293" duration="10027000" />
+      <workItem from="1608281631066" duration="86000" />
+      <workItem from="1608286006777" duration="1729000" />
+      <workItem from="1608293446589" duration="1489000" />
+      <workItem from="1608348857459" duration="659000" />
+      <workItem from="1608373145607" duration="12946000" />
+      <workItem from="1608429570651" duration="866000" />
+      <workItem from="1608432731685" duration="1762000" />
+      <workItem from="1608447907511" duration="1016000" />
+      <workItem from="1608467585714" duration="5270000" />
+      <workItem from="1608510777462" duration="1647000" />
+      <workItem from="1608550327544" duration="178000" />
+      <workItem from="1608557377907" duration="967000" />
+      <workItem from="1608559537225" duration="1562000" />
+      <workItem from="1608629114003" duration="555000" />
+      <workItem from="1608633140012" duration="637000" />
+      <workItem from="1608635422866" duration="3278000" />
+      <workItem from="1608641288959" duration="1614000" />
+      <workItem from="1608646990615" duration="59000" />
+      <workItem from="1608682150044" duration="1442000" />
+      <workItem from="1608685975666" duration="1110000" />
+      <workItem from="1608688247979" duration="526000" />
+      <workItem from="1608702999224" duration="945000" />
+      <workItem from="1608704275120" duration="54000" />
+      <workItem from="1608704345937" duration="1317000" />
+      <workItem from="1608705713552" duration="3991000" />
+      <workItem from="1608710974110" duration="91000" />
+      <workItem from="1608787932261" duration="4981000" />
+      <workItem from="1608794196195" duration="17677000" />
+      <workItem from="1608861081763" duration="198000" />
+      <workItem from="1608881790933" duration="9657000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="296" y="26" key="#BoyingUserApplication" timestamp="1608710983539">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="296" y="26" key="#BoyingUserApplication/0.0.1536.864@0.0.1536.864" timestamp="1608710983539" />
+    <state x="361" y="91" key="#Deployment" timestamp="1608788049929">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="91" key="#Deployment/0.0.1536.864@0.0.1536.864" timestamp="1608788049929" />
+    <state x="714" y="170" key="#HTTP_Proxy" timestamp="1608791784119">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="714" y="170" key="#HTTP_Proxy/0.0.1536.864@0.0.1536.864" timestamp="1608791784119" />
+    <state x="395" y="111" key="#Inspections" timestamp="1603272583153">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="395" y="111" key="#Inspections/0.0.1536.864@0.0.1536.864" timestamp="1603272583153" />
+    <state x="651" y="294" key="#Notifications" timestamp="1603764828709">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="651" y="294" key="#Notifications/0.0.1536.864@0.0.1536.864" timestamp="1603764828709" />
+    <state x="179" y="274" key="#SQL_Dialects" timestamp="1602921317463">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="179" y="274" key="#SQL_Dialects/0.0.1536.864@0.0.1536.864" timestamp="1602921317463" />
+    <state x="345" y="78" key="#SSH_Configurations" timestamp="1608788047164">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="345" y="78" key="#SSH_Configurations/0.0.1536.864@0.0.1536.864" timestamp="1608788047164" />
+    <state x="109" y="44" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608811773418">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="109" y="44" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1608811773418" />
+    <state x="574" y="138" key="#com.intellij.ide.util.MemberChooser" timestamp="1608806017139">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="574" y="138" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1608806017139" />
+    <state x="573" y="355" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1603972382627">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="573" y="355" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.864@0.0.1536.864" timestamp="1603972382627" />
+    <state x="544" y="299" width="448" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1604216652740">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="544" y="299" width="448" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864@0.0.1536.864" timestamp="1604216652740" />
+    <state x="544" y="312" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1602856616306">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="544" y="312" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1536.864@0.0.1536.864" timestamp="1602856616306" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608898577636">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1608898577636" />
+    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608789945244">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1608789945244" />
+    <state x="523" y="278" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604105813327">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="523" y="278" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.864@0.0.1536.864" timestamp="1604105813327" />
+    <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1604045240625">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1536.864@0.0.1536.864" timestamp="1604045240625" />
+    <state width="445" height="466" key="DebuggerActiveHint" timestamp="1608386467659">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="445" height="466" key="DebuggerActiveHint/0.0.1536.864@0.0.1536.864" timestamp="1608386467659" />
+    <state x="549" y="187" width="649" height="489" key="FileChooserDialogImpl" timestamp="1608889038694">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="187" width="649" height="489" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1608889038694" />
+    <state width="1292" height="278" key="GridCell.Tab.0.bottom" timestamp="1608889081975">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1292" height="278" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608889081975" />
+    <state width="1292" height="278" key="GridCell.Tab.0.center" timestamp="1608889081975">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1292" height="278" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1608889081975" />
+    <state width="1292" height="278" key="GridCell.Tab.0.left" timestamp="1608889081975">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1292" height="278" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1608889081975" />
+    <state width="1292" height="278" key="GridCell.Tab.0.right" timestamp="1608889081975">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1292" height="278" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1608889081975" />
+    <state width="1493" height="443" key="GridCell.Tab.1.bottom" timestamp="1608887336285">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="443" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608887336285" />
+    <state width="1493" height="443" key="GridCell.Tab.1.center" timestamp="1608887336285">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="443" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1608887336285" />
+    <state width="1493" height="443" key="GridCell.Tab.1.left" timestamp="1608887336285">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="443" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1608887336285" />
+    <state width="1493" height="443" key="GridCell.Tab.1.right" timestamp="1608887336285">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="443" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1608887336285" />
+    <state width="1493" height="258" key="GridCell.Tab.2.bottom" timestamp="1608886722649">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608886722649" />
+    <state width="1493" height="258" key="GridCell.Tab.2.center" timestamp="1608886722649">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1608886722649" />
+    <state width="1493" height="258" key="GridCell.Tab.2.left" timestamp="1608886722649">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1608886722649" />
+    <state width="1493" height="258" key="GridCell.Tab.2.right" timestamp="1608886722649">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1608886722649" />
+    <state width="212" height="477" key="HiddenNamespacesPopup" timestamp="1608793066053">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="212" height="477" key="HiddenNamespacesPopup/0.0.1536.864@0.0.1536.864" timestamp="1608793066053" />
+    <state x="349" y="167" key="IDE.errors.dialog" timestamp="1602485120360">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="349" y="167" key="IDE.errors.dialog/0.0.1536.864@0.0.1536.864" timestamp="1602485120360" />
+    <state x="299" y="87" key="Maven.ArtifactSearchDialog" timestamp="1602836446768">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="299" y="87" key="Maven.ArtifactSearchDialog/0.0.1536.864@0.0.1536.864" timestamp="1602836446768" />
+    <state x="583" y="366" key="ReplaceDuplicatesPrompt" timestamp="1608799119942">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="583" y="366" key="ReplaceDuplicatesPrompt/0.0.1536.864@0.0.1536.864" timestamp="1608799119942" />
+    <state x="491" y="134" key="RollbackChangesDialog" timestamp="1608882889484">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="491" y="134" key="RollbackChangesDialog/0.0.1536.864@0.0.1536.864" timestamp="1608882889484" />
+    <state x="270" y="14" key="SettingsEditor" timestamp="1608704327075">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="270" y="14" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1608704327075" />
+    <state x="705" y="338" width="561" height="524" key="StructurePopup" timestamp="1603445667843">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="705" y="338" width="561" height="524" key="StructurePopup/0.0.1536.864@0.0.1536.864" timestamp="1603445667843" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1602817081343">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.864@0.0.1536.864" timestamp="1602817081343" />
+    <state x="614" y="346" key="VCS.ChangelistChooser" timestamp="1608799090089">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="614" y="346" key="VCS.ChangelistChooser/0.0.1536.864@0.0.1536.864" timestamp="1608799090089" />
+    <state x="663" y="239" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1608793089005">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="663" y="239" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.864@0.0.1536.864" timestamp="1608793089005" />
+    <state x="601" y="292" width="334" height="280" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1602578561790">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="601" y="292" width="334" height="280" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1536.864@0.0.1536.864" timestamp="1602578561790" />
+    <state x="349" y="87" key="com.intellij.database.dbimport.ImportDialog" timestamp="1608429577836">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="349" y="87" key="com.intellij.database.dbimport.ImportDialog/0.0.1536.864@0.0.1536.864" timestamp="1608429577836" />
+    <state x="548" y="233" width="439" height="393" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1608814059522">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="548" y="233" width="439" height="393" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1536.864@0.0.1536.864" timestamp="1608814059522" />
+    <state x="610" y="0" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1608884455559">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="610" y="0" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.864@0.0.1536.864" timestamp="1608884455559" />
+    <state x="188" y="57" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604102470735">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="188" y="57" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.864@0.0.1536.864" timestamp="1604102470735" />
+    <state x="563" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608812830417">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="563" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1608812830417" />
+    <state x="499" y="181" key="extract.method.dialog" timestamp="1608799112717">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="499" y="181" key="extract.method.dialog/0.0.1536.864@0.0.1536.864" timestamp="1608799112717" />
+    <state x="468" y="164" width="726" height="536" key="find.popup" timestamp="1603200272889">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="468" y="164" width="726" height="536" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1603200272889" />
+    <state x="264" y="107" key="new project wizard" timestamp="1602764547798">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="264" y="107" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1602764547798" />
+    <state x="545" y="189" key="refactoring.ChangeSignatureDialog" timestamp="1604298605219">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="545" y="189" key="refactoring.ChangeSignatureDialog/0.0.1536.864@0.0.1536.864" timestamp="1604298605219" />
+    <state x="425" y="197" key="run.anything.popup" timestamp="1606131677132">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1606131677132" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1604318506914">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1604318506914" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/boying-admin/src/main/java/com/tongji/boying/service/impl/UmsAdminCacheServiceImpl.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/controller/ShowController.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowServiceImpl.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/UserServiceImpl.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
