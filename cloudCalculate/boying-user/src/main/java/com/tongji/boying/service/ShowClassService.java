@@ -3,6 +3,7 @@ package com.tongji.boying.service;
 import com.tongji.boying.model.ShowClass;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ShowClassService
 {
@@ -10,5 +11,5 @@ public interface ShowClassService
 
     List<ShowClass> getShowClassList(int sessionId, Integer pageNum, Integer pageSize);
 
-    Integer ticketCount(Integer classId);
+    Map<String, Integer>  ticketCount(Integer classId);
 }

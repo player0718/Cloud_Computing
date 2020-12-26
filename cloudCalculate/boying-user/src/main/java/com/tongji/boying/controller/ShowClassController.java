@@ -39,9 +39,9 @@ public class ShowClassController {
     @ApiOperation("获取演出座次剩余票")
     @RequestMapping(value = "/ticketCount/{classId}", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<Integer> ticketCount(@PathVariable Integer classId) {
-        Integer ticketCount = classService.ticketCount(classId);
-        return CommonResult.success(ticketCount);
+    public CommonResult<Map<String, Integer>> ticketCount(@PathVariable Integer classId) {
+        Map<String, Integer> map = classService.ticketCount(classId);
+        return CommonResult.success(map);
     }
 
     @ApiOperation("获取某演唱会场次的所有座次")

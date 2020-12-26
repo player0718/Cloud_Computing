@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ShowClassServiceImpl implements ShowClassService {
@@ -58,7 +60,9 @@ public class ShowClassServiceImpl implements ShowClassService {
     }
 
     @Override
-    public Integer ticketCount(Integer classId) {
+    public Map<String, Integer> ticketCount(Integer classId) {
+        Map<String, Integer> map = new HashMap<>();
+
         ShowClass showClass = detail(classId);
         int total = showClass.getCapacity();
         String sql = "select count(*) from ticket where show_class_id = ?";
@@ -66,6 +70,8 @@ public class ShowClassServiceImpl implements ShowClassService {
         if (sellCount == null) {
             sellCount = 0;
         }
-        return total - sellCount;
+        map.put("total", total);
+        map.put("remainder", total - sellCount);
+        return map;
     }
 }
