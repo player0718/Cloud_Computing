@@ -29,8 +29,6 @@ secure:
       - /home/**
       - /category/**
       - /show/**
-      - /session/**
-      - /class/**
 
 # 自定义redis key
 redis:

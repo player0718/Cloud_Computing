@@ -20,4 +20,7 @@ public class ShowClass implements Serializable {
 
     @ApiModelProperty(value = "该级别座位的定价")
     private Double price;
+
+    @ApiModelProperty(value = "该级别座位的剩余座位数量")
+    private Integer remainder;
 }

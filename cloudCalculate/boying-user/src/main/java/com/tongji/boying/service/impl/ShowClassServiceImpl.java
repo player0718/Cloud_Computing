@@ -42,8 +42,9 @@ public class ShowClassServiceImpl implements ShowClassService {
     public List<ShowClass> getShowClassList(int sessionId, Integer pageNum, Integer pageSize) {
 
         String sql = "select * from show_class where show_session_id = ?";
+        List<ShowClass> showClasses = null;
         try {
-            return jdbcTemplate.query(sql, (resultSet, i) -> {
+            showClasses = jdbcTemplate.query(sql, (resultSet, i) -> {
                 ShowClass showClass = new ShowClass();
                 showClass.setShowClassId(resultSet.getInt("show_class_id"));
                 showClass.setShowSessionId(resultSet.getInt("show_session_id"));
@@ -56,7 +57,16 @@ public class ShowClassServiceImpl implements ShowClassService {
         catch (Exception e) {
             Asserts.fail("要查询的演出座次不存在");
         }
-        return null;
+
+        for (ShowClass showClass : showClasses) {
+            sql = "select count(*) from ticket where show_class_id = ?";
+            Integer sellCount = jdbcTemplate.queryForObject(sql, Integer.class, showClass.getShowClassId());
+            if (sellCount == null) {
+                sellCount = 0;
+            }
+            showClass.setRemainder(showClass.getCapacity() - sellCount);
+        }
+        return showClasses;
     }
 
     @Override
