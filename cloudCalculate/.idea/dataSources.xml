@@ -7,5 +7,11 @@
       <jdbc-driver>org.apache.hive.jdbc.HiveDriver</jdbc-driver>
       <jdbc-url>jdbc:hive2://101.132.33.87:10000</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="@8.135.110.238" uuid="93ae08b1-ba14-4187-981e-a86755f057bd">
+      <driver-ref>hive</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.hive.jdbc.HiveDriver</jdbc-driver>
+      <jdbc-url>jdbc:hive2://8.135.110.238:10000</jdbc-url>
+    </data-source>
   </component>
 </project>

@@ -43,7 +43,7 @@ redis:
 
 
 hive:
-  url: jdbc:hive2://101.132.33.87:10000/default #云计算对应的数据库
+  url: jdbc:hive2://8.135.110.238:10000/default #云计算对应的数据库
   driver-class-name: org.apache.hive.jdbc.HiveDriver
   type: com.alibaba.druid.pool.DruidDataSource
   user: root

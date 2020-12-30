@@ -75,17 +75,18 @@ public class ShowServiceImpl implements ShowService {
 
         //0->按相关度；1->按推荐；2->按时间；3->最低价格从低到高；4->最低价格从高到低
         if (sort == 1) {
-            sql.append("sort by weight desc");
+            sql.append(" sort by weight desc");
         }
         else if (sort == 2) {
-            sql.append("sort by day_start desc");
+            sql.append(" sort by day_start desc");
         }
         else if (sort == 3) {
-            sql.append("sort by min_price asc");
+            sql.append(" sort by min_price asc");
         }
         else if (sort == 4) {
-            sql.append("sort by min_price desc");
+            sql.append(" sort by min_price desc");
         }
+        sql.append(" limit " + pageSize);
 
         System.out.println(sql.toString());
         List<BoyingShow> boyingShows = null;
