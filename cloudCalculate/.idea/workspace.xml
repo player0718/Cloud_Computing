@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a508398-9e40-4972-9d2c-9a2fe7421917" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/java/com/tongji/boying/service/impl/ShowServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boying-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/boying-user/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="9a508398-9e40-4972-9d2c-9a2fe7421917" name="Default Changelist" comment="" />
     <list id="d603f9c1-293c-4a48-aab4-8b45dca0f3de" name="getCategory" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -400,6 +397,8 @@
       <workItem from="1609167432092" duration="2746000" />
       <workItem from="1609196891829" duration="4235000" />
       <workItem from="1609288162968" duration="613000" />
+      <workItem from="1609553264829" duration="1418000" />
+      <workItem from="1609588634772" duration="717000" />
     </task>
     <servers />
   </component>
